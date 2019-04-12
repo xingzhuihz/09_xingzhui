@@ -4,18 +4,19 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Work02" />
+          <element id="module-output" name="09_xingzhui" />
         </element>
         <element id="directory" name="lib">
-          <element id="file-copy" path="$PROJECT_DIR$/../../mysql-connector-java-8.0.15/mysql-connector-java-8.0.15/mysql-connector-java-8.0.15.jar" />
-          <element id="library" level="module" name="JUnit4" module-name="Work02" />
           <element id="file-copy" path="$PROJECT_DIR$/../../soft/mchange-commons-java-0.2.11.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../../soft/c3p0-0.9.5.2.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../../soft/commons-dbutils-1.7.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../../soft/spring-security-core-3.1.0.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../mysql-connector-java-8.0.15/mysql-connector-java-8.0.15.jar" />
+          <element id="library" level="module" name="JUnit4" module-name="09_xingzhui" />
+          <element id="library" level="module" name="libs" module-name="09_xingzhui" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="Work02/web/Web" />
+      <element id="javaee-facet-resources" facet="09_xingzhui/web/Web" />
     </root>
   </artifact>
 </component>
