@@ -2,7 +2,6 @@
   <artifact type="exploded-war" name="Work02:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/Work02_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="Work02/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="Work02" />
@@ -10,13 +9,13 @@
         <element id="directory" name="lib">
           <element id="file-copy" path="$PROJECT_DIR$/../../mysql-connector-java-8.0.15/mysql-connector-java-8.0.15/mysql-connector-java-8.0.15.jar" />
           <element id="library" level="module" name="JUnit4" module-name="Work02" />
-          <element id="file-copy" path="$PROJECT_DIR$/../../apachetomcat7.0.88windowsx64/apachetomcat7.0.88/lib/servlet-api.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../../soft/mchange-commons-java-0.2.11.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../../soft/c3p0-0.9.5.2.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../../soft/commons-dbutils-1.7.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../../soft/spring-security-core-3.1.0.RELEASE.jar" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="Work02/web/Web" />
     </root>
   </artifact>
 </component>

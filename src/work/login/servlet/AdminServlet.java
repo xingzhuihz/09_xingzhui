@@ -44,12 +44,13 @@ public class AdminServlet extends HttpServlet {
 //            response.sendRedirect(request.getContextPath() + "/login.jsp");
                 //请求转发，可以携带数据,路径直接写,是服务端发出的
                 request.setAttribute("name", name);//放数据到request
-                request.getRequestDispatcher("/login.jsp").forward(request, response);
+                request.getRequestDispatcher("/jsps/index.jsp").forward(request, response);
 
 
             } else {
                 System.out.println("登陆成功" + admin);
                 response.getWriter().print("<span style='color:green'>登陆成功</span>");
+                request.getRequestDispatcher("/jsps/index.jsp").forward(request, response);
                 //跳去登陆页面
             }
 

@@ -21,7 +21,7 @@
       <!-- 四个属性 -->
       <property name="driverClass">com.mysql.jdbc.Driver</property>
       <property name="jdbcUrl">
-         <![CDATA[jdbc:mysql://127.0.0.1:3306/sql_hz?useUnicode=true&characterEncoding=UTF-8]]>
+         <![CDATA[jdbc:mysql://127.0.0.1:3306/sql_hz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC]]>
           <!--&serverTimezone=UTC-->
       </property>
       <property name="user">root</property>

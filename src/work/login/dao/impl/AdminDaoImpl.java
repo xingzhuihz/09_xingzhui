@@ -56,7 +56,7 @@ public class AdminDaoImpl implements AdminDao {
         return admin;
     }
 
-
+    @Test
     public void test1() throws Exception {
         Admin admin = new Admin(0,"admin","1234",0);
         AdminDao dao = new AdminDaoImpl();
