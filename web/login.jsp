@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Modal Registration Form Template</title>
+    <title>login</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -49,12 +49,11 @@
                     <h1><strong>Bootstrap</strong> Modal Registration Form</h1>
                     <div class="description">
                         <p>
-                            This is a free responsive modal registration form made with Bootstrap.
-                            Download it on <a href="#"><strong>AZMIND</strong></a>, customize and use it as you like!
+                            Back-stage management
                         </p>
                     </div>
                     <div class="top-big-link">
-                        <a class="btn btn-link-1 launch-modal" href="#" data-modal-id="modal-register">Launch modal</a>
+                        <a class="btn btn-link-1 launch-modal" href="#" data-modal-id="modal-register">login</a>
                     </div>
                 </div>
             </div>
@@ -73,7 +72,7 @@
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                 </button>
-                <h3 class="modal-title" id="modal-register-label">Sign up now</h3>
+                <h3 class="modal-title" id="modal-register-label">Sign in now</h3>
                 <p>Fill in the form below to get instant access:</p>
             </div>
 
@@ -98,7 +97,7 @@
                         <input type="password" name="pwd" placeholder="password"
                                class="form-last-name form-control" id="form-last-name">
                     </div>
-                    <button type="submit" class="btn">Sign me up!</button>
+                    <button type="submit" class="btn">Sign me in!</button>
                 </form>
 
 

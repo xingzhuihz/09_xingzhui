@@ -10,7 +10,7 @@
 <head>
     <%String path=request.getContextPath(); %>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Book Store Template, Free CSS Template, cssMoban.com</title>
+    <title>乡土文化</title>
     <meta name="keywords" content="Book Store Template, Free CSS Template, CSS Website Layout, CSS, HTML, cssMoban.com" />
     <meta name="description" content="Book Store Template, Free CSS Template, Download CSS Website from cssMoban.com" />
     <link href="<%=path%>css/templatemo_style.css" rel="stylesheet" type="text/css" />
@@ -25,7 +25,7 @@
             <li><a href="index.html">New Releases</a></li>
             <li><a href="#">Company</a></li>
             <li><a href="#">Contact</a></li>
-
+            <li><a href="login.jsp">login </a></li>
         </ul>
     </div> <!-- end of menu -->
 

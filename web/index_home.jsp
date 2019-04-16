@@ -10,7 +10,7 @@
 <head>
     <%String path=request.getContextPath(); %>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Book Store Template, Free CSS Template, CSS Website Layout</title>
+    <title>乡土文化首页</title>
     <meta name="keywords" content="Book Store Template, Free CSS Template, CSS Website Layout, CSS, HTML" />
     <meta name="description" content="Book Store Template, Free CSS Template, Download CSS Website" />
     <link href="<%=path%>css/templatemo_style.css" rel="stylesheet" type="text/css" />
@@ -21,8 +21,8 @@
         <ul>
             <li><a href="index_home.jsp" class="current">Home</a></li>
             <li><a href="subpage.jsp">Search</a></li>
-            <li><a href="subpage.html">Books</a></li>
-            <li><a href="subpage.html">New Releases</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">New Releases</a></li>
             <li><a href="#">Company</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="login.jsp">login </a></li>
@@ -35,7 +35,7 @@
                 <span>25%</span> discounts for
                 purchase over $80
             </p>
-            <a href="subpage.html" style="margin-left: 50px;">Read more...</a>
+            <a href="#" style="margin-left: 50px;">Read more...</a>
         </div>
 
 
@@ -45,7 +45,7 @@
                 <li>Maece nas metus</li>
                 <li>In sed risus ac feli</li>
             </ul>
-            <a href="subpage.html" style="margin-left: 50px;">Read more...</a>
+            <a href="#" style="margin-left: 50px;">Read more...</a>
         </div>
     </div> <!-- end of header -->
 
@@ -153,8 +153,8 @@
 
     <div id="templatemo_footer">
 
-        <a href="subpage.html">Home</a> | <a href="subpage.html">Search</a> | <a href="subpage.html">Books</a> | <a href="#">New Releases</a> | <a href="#">FAQs</a> | <a href="#">Contact Us</a><br />
-        Copyright © 2024 <a href="#"><strong>Your Company Name</strong></a> | from <a href="http://www.cssmoban.com" target="_parent" title="网站模板">网站模板</a>	</div>
+        <a href="#">Home</a> | <a href="#">Search</a> | <a href="#">Books</a> | <a href="#">New Releases</a> | <a href="#">FAQs</a> | <a href="#">Contact Us</a><br />
+        Copyright © 2024 <a href="#"><strong>乡土文化</strong></a> | from <a href="http://www.cssmoban.com" target="_parent" title="网站模板">星骓</a>	</div>
     <!-- end of footer -->
     <!--  Free CSS Template www.cssmoban.com -->
 </div> <!-- end of container -->

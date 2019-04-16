@@ -14,7 +14,7 @@
     <meta name="keywords" content="左右结构项目 社交 占座 ">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>Bootstrap左右结构响应式后台管理模板</title>
+    <title>后台管理</title>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
@@ -68,13 +68,13 @@
     <!-- 左侧菜单栏目块 -->
     <div class="leftMeun" id="leftMeun">
         <div id="logoDiv">
-            <p id="logoP"><img id="logo" alt="左右结构项目" src="images/logo.png"><span>左右结构项目</span></p>
+            <p id="logoP"><img id="logo" alt="左右结构项目" src="images/logo.png"><span>后台管理</span></p>
         </div>
         <div id="personInfor">
-            <p id="userName">杨鹏</p>
-            <p><span>yangxp@qq.com</span> More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+            <p id="userName">星骓</p>
+            <p><span>XZ@qq.com</span></p>
             <p>
-                <a>退出登录</a>
+                <a href="index_home.jsp">退出登录 </a>
             </p>
         </div>
         <div class="meun-title">账号管理</div>
