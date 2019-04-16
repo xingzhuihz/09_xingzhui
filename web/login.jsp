@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
+    <% String path=request.getContextPath();%>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,9 +16,9 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/form-elements.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<%=path%>assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<%=path%>assets/css/form-elements.css">
+    <link rel="stylesheet" href="<%=path%>assets/css/style.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -110,10 +110,10 @@
 
 
 <!-- Javascript -->
-<script src="assets/js/jquery-1.11.1.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/jquery.backstretch.min.js"></script>
-<script src="assets/js/scripts.js"></script>
+<script src="<%=path%>assets/js/jquery-1.11.1.min.js"></script>
+<script src="<%=path%>assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="<%=path%>assets/js/jquery.backstretch.min.js"></script>
+<script src="<%=path%>assets/js/scripts.js"></script>
 <script>
 
     let name = document.getElementById("name").value;
@@ -124,7 +124,7 @@
     }
 </script>
 <!--[if lt IE 10]>
-<script src="assets/js/placeholder.js"></script>
+<script src="<%=path%>assets/js/placeholder.js"></script>
 <![endif]-->
 
 </body>

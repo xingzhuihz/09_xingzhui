@@ -11,8 +11,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>首页</title>
     <% String path=request.getContextPath();%>
-    <link href="<%=path%>/css/common.css" rel="stylesheet" />
-    <link href="<%=path%>/css/style_ttc.css" rel="stylesheet" />
+    <link href="<%=path%>/css/common_login.css" rel="stylesheet" />
+    <link href="<%=path%>/css/style_login.css" rel="stylesheet" />
     <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
     <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
     <script type="text/javascript" src="js/cufon-yui.js"></script>
