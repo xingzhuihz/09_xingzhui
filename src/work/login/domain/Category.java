@@ -6,7 +6,7 @@ public class Category {
 
     @Override
     public String toString() {
-        return "Category{" +
+        return "CategoryDao{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 '}';
