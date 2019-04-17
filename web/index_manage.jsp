@@ -82,8 +82,8 @@
         <div class="meun-item" href="#char" aria-controls="char" role="tab" data-toggle="tab"><img src="images/icon_chara_grey.png">权限管理</div>
         <div class="meun-item" href="#user" aria-controls="user" role="tab" data-toggle="tab"><img src="images/icon_user_grey.png">用户管理</div>
         <div class="meun-item" href="#chan" aria-controls="chan" role="tab" data-toggle="tab"><img src="images/icon_change_grey.png">修改密码</div>
-        <div class="meun-title">地区管理</div>
-        <div class="meun-item" href="#scho" aria-controls="scho" role="tab" data-toggle="tab"><img src="images/icon_house_grey.png">地区管理</div>
+        <div class="meun-title">内容管理</div>
+        <div class="meun-item" href="#scho" aria-controls="scho" role="tab" data-toggle="tab"><img src="images/icon_house_grey.png">内容管理</div>
         <div class="meun-item" href="#regu" aria-controls="regu" role="tab" data-toggle="tab"><img src="images/icon_rule_grey.png">规则管理</div>
         <div class="meun-item" href="#stud" aria-controls="stud" role="tab" data-toggle="tab"><img src="images/icon_card_grey.png">人员信息</div>
         <div class="meun-item" href="#sitt" aria-controls="sitt" role="tab" data-toggle="tab"><img src="images/icon_char_grey.png">座位管理</div>
@@ -189,7 +189,7 @@
                                     3
                                 </div>
                                 <div id="topCD" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 levl2" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSchool" aria-expanded="true" aria-controls="collapseOne">
-                                    <span id="topC" onClick="changeC()" class="glyphicon glyphicon-triangle-bottom"></span><span> 地区管理</span>
+                                    <span id="topC" onClick="changeC()" class="glyphicon glyphicon-triangle-bottom"></span><span> 内容管理</span>
                                 </div>
                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                                     /admin/system
@@ -206,7 +206,7 @@
                                         1
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4   levl3">
-                                        <span></span><span>地区管理</span>
+                                        <span></span><span>内容管理</span>
                                     </div>
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                                         /admin/system/userlist/software/
@@ -950,7 +950,7 @@
 
                 <div class="check-div form-inline">
                     <div class="col-xs-3">
-                        <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addSchool">添加地区 </button>
+                        <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addSchool">添加内容 </button>
                     </div>
                     <div class="col-lg-4 col-xs-5">
                         <input type="text" class=" form-control input-sm " placeholder="输入文字搜索">
@@ -1062,29 +1062,29 @@
                                 <div class="container-fluid">
                                     <form class="form-horizontal">
                                         <div class="form-group ">
-                                            <label for="sName" class="col-xs-3 control-label">地区名称：</label>
+                                            <label for="sName" class="col-xs-3 control-label">文章主题：</label>
                                             <div class="col-xs-8 ">
                                                 <input type="email" class="form-control input-sm duiqi" id="sName" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-group ">
-                                            <label for="sName" class="col-xs-3 control-label">经度：</label>
+                                            <label for="sName" class="col-xs-3 control-label">内容：</label>
                                             <div class="col-xs-8 ">
-                                                <input type="email" class="form-control input-sm duiqi" id="sName" placeholder="">
+                                                <input type="text" class="form-control input-sm duiqi" id="sName" placeholder="">
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="sLink" class="col-xs-3 control-label">纬度：</label>
-                                            <div class="col-xs-8 ">
-                                                <input type="" class="form-control input-sm duiqi" id="sLink" placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="sOrd" class="col-xs-3 control-label">简称：</label>
-                                            <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
-                                            </div>
-                                        </div>
+                                        <%--<div class="form-group">--%>
+                                            <%--<label for="sLink" class="col-xs-3 control-label">纬度：</label>--%>
+                                            <%--<div class="col-xs-8 ">--%>
+                                                <%--<input type="" class="form-control input-sm duiqi" id="sLink" placeholder="">--%>
+                                            <%--</div>--%>
+                                        <%--</div>--%>
+                                        <%--<div class="form-group">--%>
+                                            <%--<label for="sOrd" class="col-xs-3 control-label">简称：</label>--%>
+                                            <%--<div class="col-xs-8">--%>
+                                                <%--<input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">--%>
+                                            <%--</div>--%>
+                                        <%--</div>--%>
                                     </form>
                                 </div>
                             </div>

@@ -51,6 +51,9 @@
                         <p>
                             Back-stage management
                         </p>
+                        <p>
+                            默认账号：admin；密码：1234
+                        </p>
                     </div>
                     <div class="top-big-link">
                         <a class="btn btn-link-1 launch-modal" href="#" data-modal-id="modal-register">login</a>

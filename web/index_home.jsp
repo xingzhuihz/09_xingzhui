@@ -19,21 +19,21 @@
 <div id="templatemo_container">
     <div id="templatemo_menu">
         <ul>
-            <li><a href="index_home.jsp" class="current">Home</a></li>
-            <li><a href="subpage.jsp">Search</a></li>
-            <li><a href="#">Books</a></li>
-            <li><a href="#">New Releases</a></li>
-            <li><a href="#">Company</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="login.jsp">login </a></li>
+            <li><a href="index_home.jsp" class="current">首页</a></li>
+            <li><a href="subpage.jsp">乡土文化</a></li>
+            <li><a href="#">乡土经济</a></li>
+            <li><a href="#">乡土习俗</a></li>
+            <li><a href="#">文化遗产</a></li>
+            <li><a href="#">乡贤名士</a></li>
+            <li><a href="login.jsp">登录 </a></li>
         </ul>
     </div> <!-- end of menu -->
 
     <div id="templatemo_header">
         <div id="templatemo_special_offers">
             <p>
-                <span>25%</span> discounts for
-                purchase over $80
+                <span>tel:100000</span> XXX
+                XXXX
             </p>
             <a href="#" style="margin-left: 50px;">Read more...</a>
         </div>
@@ -53,13 +53,13 @@
 
         <div id="templatemo_content_left">
             <div class="templatemo_content_left_section">
-                <h1>Categories</h1>
+                <h1>分类</h1>
                 <ul>
-                    <li><a href="subpage.html">Donec accumsan urna</a></li>
-                    <li><a href="subpage.html">Proin vulputate justo</a></li>
-                    <li><a href="#">In sed risus ac feli</a></li>
-                    <li><a href="#">Aliquam tristique dolor</a></li>
-                    <li><a href="#">Maece nas metus</a></li>
+                    <li><a href="#">乡土经济</a></li>
+                    <li><a href="#">乡土文化</a></li>
+                    <li><a href="#">乡土习俗</a></li>
+                    <li><a href="#">乡贤名士</a></li>
+                    <li><a href="#">文化遗产</a></li>
                     <li><a href="#">Sed pellentesque placerat</a></li>
                     <li><a href="#">Suspen disse</a></li>
                     <li><a href="#">Maece nas metus</a></li>
@@ -82,21 +82,18 @@
                 </ul>
             </div>
 
-            <div class="templatemo_content_left_section">
-                <a href="http://validator.w3.org/check?uri=referer"><img style="border:0;width:88px;height:31px" src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" width="88" height="31" vspace="8" border="0" /></a>
-                <a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px"  src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" vspace="8" border="0" /></a>
-            </div>
+
         </div> <!-- end of content left -->
 
         <div id="templatemo_content_right">
             <div class="templatemo_product_box">
-                <h1>Photography  <span>(by Best Author)</span></h1>
+                <h1>XXXXX  <span>(by Best Author)</span></h1>
                 <img src="images/templatemo_image_01.jpg" alt="image" />
                 <div class="product_info">
                     <p>Etiam luctus. Quisque facilisis suscipit elit. Curabitur...</p>
-                    <h3>$55</h3>
-                    <div class="buy_now_button"><a href="subpage.html">Buy Now</a></div>
-                    <div class="detail_button"><a href="subpage.html">Detail</a></div>
+                    <h3>XXX</h3>
+                    <div class="buy_now_button"><a href="subpage.jsp">查看</a></div>
+                    <div class="detail_button"><a href="subpage.jsp">Detail</a></div>
                 </div>
                 <div class="cleaner">&nbsp;</div>
             </div>
@@ -104,13 +101,13 @@
             <div class="cleaner_with_width">&nbsp;</div>
 
             <div class="templatemo_product_box">
-                <h1>Cooking  <span>(by New Author)</span></h1>
+                <h1>XXXXX  <span>(by New Author)</span></h1>
                 <img src="images/templatemo_image_02.jpg" alt="image" />
                 <div class="product_info">
                     <p>Aliquam a dui, ac magna quis est eleifend dictum.</p>
-                    <h3>$35</h3>
-                    <div class="buy_now_button"><a href="subpage.html">Buy Now</a></div>
-                    <div class="detail_button"><a href="subpage.html">Detail</a></div>
+                    <h3>XXX</h3>
+                    <div class="buy_now_button"><a href="subpage.jsp">查看</a></div>
+                    <div class="detail_button"><a href="subpage.jsp">Detail</a></div>
                 </div>
                 <div class="cleaner">&nbsp;</div>
             </div>
@@ -118,13 +115,13 @@
             <div class="cleaner_with_height">&nbsp;</div>
 
             <div class="templatemo_product_box">
-                <h1>Gardening <span>(by Famous Author)</span></h1>
+                <h1>XXXX <span>(by Famous Author)</span></h1>
                 <img src="images/templatemo_image_03.jpg" alt="image" />
                 <div class="product_info">
                     <p>Ut fringilla enim sed turpis. Sed justo dolor, convallis at.</p>
-                    <h3>$65</h3>
-                    <div class="buy_now_button"><a href="subpage.html">Buy Now</a></div>
-                    <div class="detail_button"><a href="subpage.html">Detail</a></div>
+                    <h3>XXX</h3>
+                    <div class="buy_now_button"><a href="subpage.jsp">查看</a></div>
+                    <div class="detail_button"><a href="subpage.jsp">Detail</a></div>
                 </div>
                 <div class="cleaner">&nbsp;</div>
             </div>
@@ -132,20 +129,20 @@
             <div class="cleaner_with_width">&nbsp;</div>
 
             <div class="templatemo_product_box">
-                <h1>Sushi Book  <span>(by Japanese Name)</span></h1>
+                <h1>XXXXX  <span>(by Japanese Name)</span></h1>
                 <img src="images/templatemo_image_04.jpg" alt="image" />
                 <div class="product_info">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                    <h3>$45</h3>
-                    <div class="buy_now_button"><a href="subpage.html">Buy Now</a></div>
-                    <div class="detail_button"><a href="subpage.html">Detail</a></div>
+                    <h3>XXX</h3>
+                    <div class="buy_now_button"><a href="subpage.jsp">查看</a></div>
+                    <div class="detail_button"><a href="subpage.jsp">Detail</a></div>
                 </div>
                 <div class="cleaner">&nbsp;</div>
             </div>
 
             <div class="cleaner_with_height">&nbsp;</div>
 
-            <a href="subpage.html"><img src="images/templatemo_ads.jpg" alt="ads" /></a>
+            <a href="#"><img src="images/templatemo_ads.jpg" alt="ads" /></a>
         </div> <!-- end of content right -->
 
         <div class="cleaner_with_height">&nbsp;</div>
@@ -153,7 +150,7 @@
 
     <div id="templatemo_footer">
 
-        <a href="#">Home</a> | <a href="#">Search</a> | <a href="#">Books</a> | <a href="#">New Releases</a> | <a href="#">FAQs</a> | <a href="#">Contact Us</a><br />
+        <a href="#">首页</a> | <a href="#">乡土文化</a> | <a href="#">乡土经济</a> | <a href="#">乡贤名士</a> | <a href="#">文化遗产</a> | <a href="#">联系我们</a><br />
         Copyright © 2024 <a href="#"><strong>乡土文化</strong></a> | from <a href="http://www.cssmoban.com" target="_parent" title="网站模板">星骓</a>	</div>
     <!-- end of footer -->
     <!--  Free CSS Template www.cssmoban.com -->
