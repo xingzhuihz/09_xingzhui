@@ -12,6 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;
 public class NativeProductDaoImpl implements NativeProductDao {
+    /**
+     * 用于首页的6项产品
+     * @return
+     * @throws SQLException
+     */
     public List<NativeProduct> findSixProduct() throws SQLException {
         String sql="SELECT id,name,img FROM native_product_info ORDER BY onlinetime DESC LIMIT 0,6;";
         QueryRunner runner = new QueryRunner(DSutils.getDataSource());
@@ -20,7 +25,7 @@ public class NativeProductDaoImpl implements NativeProductDao {
     @Test
     public void test1() throws SQLException {
         NativeProductDao dao = new NativeProductDaoImpl();
-        System.err.println(((NativeProductDaoImpl) dao).findSixProduct());
+        System.err.println( dao.findSixProduct());
 
 
     }

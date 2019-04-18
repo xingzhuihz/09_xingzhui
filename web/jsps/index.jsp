@@ -78,30 +78,32 @@
                 <div class="picgd"> <a href="#" onclick="return false" title="上翻" id="LeftArr" class="up png">上翻</a> <a href="#" onclick="return false" title="下翻" id="RightArr" class="down png">下翻</a>
                     <div id="pic" class="pic">
                         <ul id="scrollPic">
-                            <li>
-                                <p class="media"><a href="#_"><img src="<%=path%>/images/p.jpg" width="203" height="131" /></a></p>
-                                <p class="intro"><a href="#_">精选葵花籽油1</a></p>
-                            </li>
-                            <li>
-                                <p class="media"><a href="#_"><img src="<%=path%>/images/p.jpg" width="203" height="131" /></a></p>
-                                <p class="intro"><a href="#_">精选葵花籽油2</a></p>
-                            </li>
-                            <li>
-                                <p class="media"><a href="#_"><img src="<%=path%>/images/p.jpg" width="203" height="131" /></a></p>
-                                <p class="intro"><a href="#_">精选葵花籽油3</a></p>
-                            </li>
-                            <li>
-                                <p class="media"><a href="#_"><img src="<%=path%>/images/p.jpg" width="203" height="131" /></a></p>
-                                <p class="intro"><a href="#_">精选葵花籽油4</a></p>
-                            </li>
-                            <li>
-                                <p class="media"><a href="#_"><img src="<%=path%>/images/p.jpg" width="203" height="131" /></a></p>
-                                <p class="intro"><a href="#_">精选葵花籽油5</a></p>
-                            </li>
-                            <li>
-                                <p class="media"><a href="#_"><img src="<%=path%>/images/p.jpg" width="203" height="131" /></a></p>
-                                <p class="intro"><a href="#_">精选葵花籽油6</a></p>
-                            </li>
+
+
+                            <%--<li>--%>
+                                <%--<p class="media"><a href="#_"><img src="<%=path%>/images/p.jpg" width="203" height="131" /></a></p>--%>
+                                <%--<p class="intro"><a href="#_">精选葵花籽油1</a></p>--%>
+                            <%--</li>--%>
+                            <%--<li>--%>
+                                <%--<p class="media"><a href="#_"><img src="<%=path%>/images/p.jpg" width="203" height="131" /></a></p>--%>
+                                <%--<p class="intro"><a href="#_">精选葵花籽油2</a></p>--%>
+                            <%--</li>--%>
+                            <%--<li>--%>
+                                <%--<p class="media"><a href="#_"><img src="<%=path%>/images/p.jpg" width="203" height="131" /></a></p>--%>
+                                <%--<p class="intro"><a href="#_">精选葵花籽油3</a></p>--%>
+                            <%--</li>--%>
+                            <%--<li>--%>
+                                <%--<p class="media"><a href="#_"><img src="<%=path%>/images/p.jpg" width="203" height="131" /></a></p>--%>
+                                <%--<p class="intro"><a href="#_">精选葵花籽油4</a></p>--%>
+                            <%--</li>--%>
+                            <%--<li>--%>
+                                <%--<p class="media"><a href="#_"><img src="<%=path%>/images/p.jpg" width="203" height="131" /></a></p>--%>
+                                <%--<p class="intro"><a href="#_">精选葵花籽油5</a></p>--%>
+                            <%--</li>--%>
+                            <%--<li>--%>
+                                <%--<p class="media"><a href="#_"><img src="<%=path%>/images/p.jpg" width="203" height="131" /></a></p>--%>
+                                <%--<p class="intro"><a href="#_">精选葵花籽油6</a></p>--%>
+                            <%--</li>--%>
                         </ul>
                     </div>
                 </div>

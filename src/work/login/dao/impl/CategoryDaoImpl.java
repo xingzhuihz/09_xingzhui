@@ -4,9 +4,7 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.junit.Test;
 import work.login.dao.CategoryDao;
-import work.login.dao.NativeProductDao;
 import work.login.domain.Category;
-import work.login.domain.NativeProduct;
 import work.login.utils.DSutils;
 
 import java.sql.SQLException;
