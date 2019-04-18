@@ -45,8 +45,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2 text">
-                    <a class="logo" href="index.html"></a>
-                    <h1><strong>Bootstrap</strong> Modal Registration Form</h1>
+                    <a class="logo" href="#"></a>
+                    <h1><strong>乡土文化</strong> 登录</h1>
                     <div class="description">
                         <p>
                             Back-stage management

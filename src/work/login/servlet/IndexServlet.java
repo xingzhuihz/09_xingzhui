@@ -49,6 +49,7 @@ public class IndexServlet extends HttpServlet {
 
             // 输出结果
             response.getWriter().write(jsonSixProduct);
+
         } catch (Exception e) {
             e.printStackTrace();
             new RuntimeException(e);

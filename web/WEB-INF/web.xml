@@ -3,40 +3,42 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <!--<welcome-file-list>-->
+        <!--<welcome-file>/jsps/index.jsp</welcome-file>-->
+    <!--</welcome-file-list>-->
     <welcome-file-list>
-        <welcome-file>/jsps/index.jsp</welcome-file>
+        <welcome-file>index_home.jsp</welcome-file>
     </welcome-file-list>
+    <!--<servlet>-->
+        <!--<servlet-name>LoginServlet</servlet-name>-->
+        <!--<servlet-class>work.login.testLoginestLogin.LoginServlet</servlet-class>-->
+    <!--</servlet>-->
 
-    <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>work.login.login.LoginServlet</servlet-class>
-    </servlet>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>LoginServlet</servlet-name>-->
+        <!--<url-pattern>/login</url-pattern>-->
+    <!--</servlet-mapping>-->
 
-    <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/login</url-pattern>
-    </servlet-mapping>
+    <!--<servlet>-->
+        <!--<servlet-name>test2</servlet-name>-->
+        <!--<servlet-class>work.login.testLoginestLogin.TestGenServlet</servlet-class>-->
+    <!--</servlet>-->
 
-    <servlet>
-        <servlet-name>test2</servlet-name>
-        <servlet-class>work.login.login.TestGenServlet</servlet-class>
-    </servlet>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>test2</servlet-name>-->
+        <!--<url-pattern>/test2</url-pattern>-->
+    <!--</servlet-mapping>-->
 
-    <servlet-mapping>
-        <servlet-name>test2</servlet-name>
-        <url-pattern>/test2</url-pattern>
-    </servlet-mapping>
+    <!--<servlet>-->
+        <!--<servlet-name>test</servlet-name>-->
+        <!--<servlet-class>work.login.testLoginestLogin.TestServlet</servlet-class>-->
+    <!--</servlet>-->
 
-    <servlet>
-        <servlet-name>test</servlet-name>
-        <servlet-class>work.login.login.TestServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>test</servlet-name>
-        <url-pattern>/test</url-pattern>
-        <url-pattern>/a.php</url-pattern>
-        <url-pattern>/a/b/test.aspx</url-pattern>
-        <url-pattern>/test.html</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>test</servlet-name>-->
+        <!--<url-pattern>/test</url-pattern>-->
+        <!--<url-pattern>/a.php</url-pattern>-->
+        <!--<url-pattern>/a/b/test.aspx</url-pattern>-->
+        <!--<url-pattern>/test.html</url-pattern>-->
+    <!--</servlet-mapping>-->
 </web-app>
