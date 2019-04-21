@@ -35,63 +35,63 @@
         </div> <!-- end of content left -->
 
         <div id="templatemo_content_right">
-            <div class="templatemo_product_box">
-            <h1>XXXXX  <span>(by Best Author)</span></h1>
-            <img src="<%=path %>images/templatemo_image_01.jpg" alt="image" />
-            <div class="product_info">
-            <p>Etiam luctus. Quisque facilisis suscipit elit. Curabitur...</p>
-            <h3>XXX</h3>
-            <div class="buy_now_button"><a href="subpage.jsp">查看</a></div>
-            <div class="detail_button"><a href="subpage.jsp">Detail</a></div>
-            </div>
-            <div class="cleaner">&nbsp;</div>
-            </div>
+            <%--<div class="templatemo_product_box">--%>
+            <%--<h1>XXXXX  <span>(by Best Author)</span></h1>--%>
+            <%--<img src="<%=path %>images/templatemo_image_01.jpg" alt="image" />--%>
+            <%--<div class="product_info">--%>
+            <%--<p>Etiam luctus. Quisque facilisis suscipit elit. Curabitur...</p>--%>
+            <%--<h3>XXX</h3>--%>
+            <%--<div class="buy_now_button"><a href="subpage.jsp">查看</a></div>--%>
+            <%--<div class="detail_button"><a href="subpage.jsp">Detail</a></div>--%>
+            <%--</div>--%>
+            <%--<div class="cleaner">&nbsp;</div>--%>
+            <%--</div>--%>
 
-            <div class="cleaner_with_width">&nbsp;</div>
+            <%--<div class="cleaner_with_width">&nbsp;</div>--%>
 
-            <div class="templatemo_product_box">
-            <h1>XXXXX  <span>(by New Author)</span></h1>
-            <img src="<%=path %>images/templatemo_image_02.jpg" alt="image" />
-            <div class="product_info">
-            <p>Aliquam a dui, ac magna quis est eleifend dictum.</p>
-            <h3>XXX</h3>
-            <div class="buy_now_button"><a href="subpage.jsp">查看</a></div>
-            <div class="detail_button"><a href="subpage.jsp">Detail</a></div>
-            </div>
-            <div class="cleaner">&nbsp;</div>
-            </div>
+            <%--<div class="templatemo_product_box">--%>
+            <%--<h1>XXXXX  <span>(by New Author)</span></h1>--%>
+            <%--<img src="<%=path %>images/templatemo_image_02.jpg" alt="image" />--%>
+            <%--<div class="product_info">--%>
+            <%--<p>Aliquam a dui, ac magna quis est eleifend dictum.</p>--%>
+            <%--<h3>XXX</h3>--%>
+            <%--<div class="buy_now_button"><a href="subpage.jsp">查看</a></div>--%>
+            <%--<div class="detail_button"><a href="subpage.jsp">Detail</a></div>--%>
+            <%--</div>--%>
+            <%--<div class="cleaner">&nbsp;</div>--%>
+            <%--</div>--%>
 
-            <div class="cleaner_with_height">&nbsp;</div>
+            <%--<div class="cleaner_with_height">&nbsp;</div>--%>
 
-            <div class="templatemo_product_box">
-            <h1>XXXX <span>(by Famous Author)</span></h1>
-            <img src="<%=path %>images/templatemo_image_03.jpg" alt="image" />
-            <div class="product_info">
-            <p>Ut fringilla enim sed turpis. Sed justo dolor, convallis at.</p>
-            <h3>XXX</h3>
-            <div class="buy_now_button"><a href="subpage.jsp">查看</a></div>
-            <div class="detail_button"><a href="subpage.jsp">Detail</a></div>
-            </div>
-            <div class="cleaner">&nbsp;</div>
-            </div>
+            <%--<div class="templatemo_product_box">--%>
+            <%--<h1>XXXX <span>(by Famous Author)</span></h1>--%>
+            <%--<img src="<%=path %>images/templatemo_image_03.jpg" alt="image" />--%>
+            <%--<div class="product_info">--%>
+            <%--<p>Ut fringilla enim sed turpis. Sed justo dolor, convallis at.</p>--%>
+            <%--<h3>XXX</h3>--%>
+            <%--<div class="buy_now_button"><a href="subpage.jsp">查看</a></div>--%>
+            <%--<div class="detail_button"><a href="subpage.jsp">Detail</a></div>--%>
+            <%--</div>--%>
+            <%--<div class="cleaner">&nbsp;</div>--%>
+            <%--</div>--%>
 
-            <div class="cleaner_with_width">&nbsp;</div>
+            <%--<div class="cleaner_with_width">&nbsp;</div>--%>
 
-            <div class="templatemo_product_box">
-            <h1>XXXXX  <span>(by Japanese Name)</span></h1>
-            <img src="<%=path %>images/templatemo_image_04.jpg" alt="image" />
-            <div class="product_info">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-            <h3>XXX</h3>
-            <div class="buy_now_button"><a href="subpage.jsp">查看</a></div>
-            <div class="detail_button"><a href="subpage.jsp">Detail</a></div>
-            </div>
-            <div class="cleaner">&nbsp;</div>
-            </div>
+            <%--<div class="templatemo_product_box">--%>
+            <%--<h1>XXXXX  <span>(by Japanese Name)</span></h1>--%>
+            <%--<img src="<%=path %>images/templatemo_image_04.jpg" alt="image" />--%>
+            <%--<div class="product_info">--%>
+            <%--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>--%>
+            <%--<h3>XXX</h3>--%>
+            <%--<div class="buy_now_button"><a href="subpage.jsp">查看</a></div>--%>
+            <%--<div class="detail_button"><a href="subpage.jsp">Detail</a></div>--%>
+            <%--</div>--%>
+            <%--<div class="cleaner">&nbsp;</div>--%>
+            <%--</div>--%>
 
-            <div class="cleaner_with_height">&nbsp;</div>
+            <%--<div class="cleaner_with_height">&nbsp;</div>--%>
 
-            <a href="#"><img src="<%=path %>images/templatemo_ads.jpg" alt="ads" /></a>
+            <%--<a href="#"><img src="<%=path %>images/templatemo_ads.jpg" alt="ads" /></a>--%>
         </div> <!-- end of content right -->
 
         <div class="cleaner_with_height">&nbsp;</div>
