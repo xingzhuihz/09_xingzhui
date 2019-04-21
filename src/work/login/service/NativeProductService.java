@@ -7,4 +7,8 @@ public interface NativeProductService {
      * @throws Exception
      */
     String getJsonSixProduct() throws Exception;
+
+    String getJsonSixProductTwo() throws Exception;
+
+    String getJsonSixProductThree() throws Exception;
 }

@@ -23,8 +23,22 @@ public class NativeProductServiceImpl implements NativeProductService {
 
         return JSONArray.fromObject(list).toString();
     }
+
+    @Override
+    public String getJsonSixProductTwo() throws Exception {
+        NativeProductDao dao = new NativeProductDaoImpl();
+        List<NativeProduct> list = dao.findSixProductTwo();
+        return JSONArray.fromObject(list).toString();
+    }
+    @Override
+    public String getJsonSixProductThree() throws Exception {
+        NativeProductDao dao = new NativeProductDaoImpl();
+        List<NativeProduct> list = dao.findSixProductThree();
+        return JSONArray.fromObject(list).toString();
+    }
+
     @Test
     public void test()throws  Exception {
-        System.err.println(new NativeProductServiceImpl().getJsonSixProduct());
+        System.err.println(new NativeProductServiceImpl().getJsonSixProductTwo());
     }
 }

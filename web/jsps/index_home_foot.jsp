@@ -8,5 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div id="templatemo_footer">
 
-    <a href="#">首页</a> | <a href="#">乡土文化</a> | <a href="#">乡土经济</a> | <a href="#">乡贤名士</a> | <a href="#">文化遗产</a> | <a href="#">联系我们</a><br />
-    Copyright © 2024 <a href="#"><strong>乡土文化</strong></a> | from <a href="http://www.cssmoban.com" target="_parent" title="网站模板">星骓</a>	</div>
+    <%--<a href="#">首页</a> | <a href="#">乡土文化</a> | <a href="#">乡土经济</a> | <a href="#">乡贤名士</a> | <a href="#">文化遗产</a>| <a href="#">乡土习俗</a> | <a href="#">联系我们</a><br />--%>
+    <%--Copyright © 2024 <a href="#"><strong>乡土文化</strong></a> | from <a href="http://www.cssmoban.com" target="_parent" title="网站模板">星骓</a>--%>
+</div>

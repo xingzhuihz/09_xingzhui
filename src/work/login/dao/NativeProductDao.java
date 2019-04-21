@@ -8,5 +8,9 @@ import java.util.List;
 
 public interface NativeProductDao {
     // 6项数据
-    public List<NativeProduct> findSixProduct() throws SQLException;
+    List<NativeProduct> findSixProduct() throws SQLException;
+
+    List<NativeProduct> findSixProductTwo() throws SQLException;
+
+    List<NativeProduct> findSixProductThree() throws SQLException;
 }

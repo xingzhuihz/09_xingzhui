@@ -20,12 +20,28 @@ public class NativeProductDaoImpl implements NativeProductDao {
     public List<NativeProduct> findSixProduct() throws SQLException {
         String sql="SELECT id,name,img FROM native_product_info ORDER BY onlinetime DESC LIMIT 0,6;";
         QueryRunner runner = new QueryRunner(DSutils.getDataSource());
-        return  runner.query(sql, new BeanListHandler<NativeProduct>(NativeProduct.class));
+//        return  runner.query(sql, new BeanListHandler<NativeProduct>(NativeProduct.class));
+        return runner.query(sql, new BeanListHandler<>(NativeProduct.class));
     }
+
+    @Override
+    public List<NativeProduct> findSixProductTwo() throws SQLException {
+        String sql="SELECT id,name,img FROM native_product_info ORDER BY onlinetime DESC LIMIT 7,12;";
+        QueryRunner runner = new QueryRunner(DSutils.getDataSource());
+        return runner.query(sql, new BeanListHandler<>(NativeProduct.class));
+    }
+
+    @Override
+    public List<NativeProduct> findSixProductThree() throws SQLException {
+        String sql="SELECT id,name,img FROM native_product_info ORDER BY onlinetime DESC LIMIT 13,18;";
+        QueryRunner runner = new QueryRunner(DSutils.getDataSource());
+        return runner.query(sql, new BeanListHandler<>(NativeProduct.class));
+    }
+
     @Test
     public void test1() throws SQLException {
         NativeProductDao dao = new NativeProductDaoImpl();
-        System.err.println( dao.findSixProduct());
+        System.err.println( dao.findSixProductTwo());
 
 
     }

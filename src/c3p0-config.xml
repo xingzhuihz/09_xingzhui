@@ -19,7 +19,7 @@
       <!-- 如果池中数据连接不够时一次增长多少个 -->
       <property name="acquireIncrement">2</property>
       <!-- 四个属性 -->
-      <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+      <property name="driverClass">com.mysql.jdbc.Driver</property>
       <property name="jdbcUrl">
          <![CDATA[jdbc:mysql://127.0.0.1:3306/sql_hz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC]]>
           <!--&serverTimezone=UTC-->

@@ -632,7 +632,7 @@ Github site: http://github.com/razorjack/quicksand
  * by Scott Jehl, scott@filamentgroup.com
  * http://www.filamentgroup.com
  * reference article: http://www.filamentgroup.com/lab/update_automatically_preload_images_from_css_with_jquery/
- * demo page: http://www.filamentgroup.com/examples/preload<%=path%>/images/index_v2.php
+ * demo page: http://www.filamentgroup.com/examples/preloadImages/index_v2.php
  * 
  * Copyright (c) 2008 Filament Group, Inc
  * Dual licensed under the MIT (filamentgroup.com/examples/mit-license.txt) and GPL (filamentgroup.com/examples/gpl-license.txt) licenses.

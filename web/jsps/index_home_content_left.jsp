@@ -8,15 +8,29 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="templatemo_content_left_section">
     <h1>分类</h1>
-    <ul>
-        <li><a href="#">乡土经济</a></li>
-        <li><a href="#">乡土文化</a></li>
-        <li><a href="#">乡土习俗</a></li>
-        <li><a href="#">乡贤名士</a></li>
-        <li><a href="#">文化遗产</a></li>
-        <li><a href="#">Sed pellentesque placerat</a></li>
-        <li><a href="#">Suspen disse</a></li>
-        <li><a href="#">Maece nas metus</a></li>
-        <li><a href="#">In sed risus ac feli</a></li>
+    <ul id="content_left_title1">
+        <%--<li><a href="#">乡土经济</a></li>--%>
+        <%--<li><a href="#">乡土文化</a></li>--%>
+        <%--<li><a href="#">乡土习俗</a></li>--%>
+        <%--<li><a href="#">乡贤名士</a></li>--%>
+        <%--<li><a href="#">文化遗产</a></li>--%>
+        <%--<li><a href="#">Sed pellentesque placerat</a></li>--%>
+        <%--<li><a href="#">Suspen disse</a></li>--%>
+        <%--<li><a href="#">Maece nas metus</a></li>--%>
+        <%--<li><a href="#">In sed risus ac feli</a></li>--%>
+    </ul>
+</div>
+<div class="templatemo_content_left_section">
+    <h1>分类</h1>
+    <ul id="content_left_title2">
+        <%--<li><a href="#">乡土经济</a></li>--%>
+        <%--<li><a href="#">乡土文化</a></li>--%>
+        <%--<li><a href="#">乡土习俗</a></li>--%>
+        <%--<li><a href="#">乡贤名士</a></li>--%>
+        <%--<li><a href="#">文化遗产</a></li>--%>
+        <%--<li><a href="#">Sed pellentesque placerat</a></li>--%>
+        <%--<li><a href="#">Suspen disse</a></li>--%>
+        <%--<li><a href="#">Maece nas metus</a></li>--%>
+        <%--<li><a href="#">In sed risus ac feli</a></li>--%>
     </ul>
 </div>
