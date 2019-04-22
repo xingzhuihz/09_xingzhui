@@ -252,8 +252,14 @@
                 let a = obj.a;
                 let uploadtime = obj.uploadtime;
                 let p = obj.p;
-                div.innerHTML += " <div class=\"templatemo_product_box\"><h1>" + h1 + "<span>(" + span + ")</span></h1><img src=\"<%=path %>" + img + "\" alt=\"image\" /><div class=\"product_info\"><p>" + p + "</p><h3>" + uploadtime + "</h3><div class=\"buy_now_button\"><a href=\"#\">查看</a></div><div class=\"detail_button\"><a href=\"#\">Detail</a></div></div><div class=\"cleaner\">&nbsp;</div></div>";
-                // div.innerHTML += "<div class=\"cleaner_with_height\">&nbsp;</div>";
+                div.innerHTML += " <div class=\"templatemo_product_box\"><h1>"+h1+"<span>("+span+")</span></h1><img src=\"<%=path %>"+img+"\" alt=\"image\" /><div class=\"product_info\"><p>"+p+"</p><h3>"+uploadtime+"</h3><div class=\"buy_now_button\"><a href=\"#\">查看</a></div><div class=\"detail_button\"><a href=\"#\">Detail</a></div></div><div class=\"cleaner\">&nbsp;</div></div>";
+                if (i % 2 == 0) {
+                    div.innerHTML += "<div class=\"cleaner_with_width\">&nbsp;</div>";
+                } else if (i % 2 == 1 ) {
+                    div.innerHTML += "<div class=\"cleaner_with_height\">&nbsp;</div>";
+                }
+
+
             }
             div.innerHTML += "<a href=\"#\"><img src=\"<%=path %>images/templatemo_ads.jpg\" alt=\"ads\" /></a>";
 
