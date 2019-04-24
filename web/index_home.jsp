@@ -159,7 +159,8 @@
                 let obj = json[i];
                 let id = obj.id;
                 let title = obj.title;
-                ul.innerHTML += " <li><a href=\"#\">" + title + "</a></li>";
+                let a = obj.a;
+                ul.innerHTML += " <li><a href=\"<%=path %>" + a + "\">" + title + "</a></li>";
             }
             ul.innerHTML += "<li><a href=\"../login.jsp\">登录 </a></li>";
             //尾部
@@ -200,22 +201,37 @@
             ul1.innerHTML = "";
 
             let len = json.length;
-            for (let i = 0; i < len; i++) {
-                let obj = json[i];
-                let id = obj.id;
-                let title = obj.title;
-                ul1.innerHTML += " <li><a href=\"#\">" + title + "</a></li>";
+            if (6 <= len) {
+                for (let i = 5; i < len; i++) {
+                    let obj = json[i];
+                    let id = obj.id;
+                    let title = obj.title;
+                    let a = obj.a;
+                    if (13 >= i) {
+                        ul1.innerHTML += " <li><a href=\"<%=path%>" + a + "\">" + title + "</a></li>";
+                    } else if (14 == i) {
+                        break;
+                    }
+                }
             }
+
 
             let ul2 = document.getElementById("content_left_title2");
             ul2.innerHTML = "";
 
+            if (15 <= len) {
+                for (let i = 14; i < len; i++) {
+                    let obj = json[i];
+                    let id = obj.id;
+                    let title = obj.title;
+                    let a = obj.a;
+                    if (22 >= i) {
+                        ul2.innerHTML += " <li><a href=\"<%=path%>"+a+"\">" + title + "</a></li>";
+                    }else if (23 == i) {
+                        break;
+                    }
 
-            for (let i = 0; i < len; i++) {
-                let obj = json[i];
-                let id = obj.id;
-                let title = obj.title;
-                ul2.innerHTML += " <li><a href=\"#\">" + title + "</a></li>";
+                }
             }
 
 
@@ -243,7 +259,8 @@
             div.innerHTML = "";
 
             let len = json.length;
-            for (let i = 0; i < len; i++) {
+
+            for (let i = 0; i < 4; i++) {
                 let obj = json[i];
                 let id = obj.id;
                 let h1 = obj.h1;
@@ -252,10 +269,13 @@
                 let a = obj.a;
                 let uploadtime = obj.uploadtime;
                 let p = obj.p;
-                div.innerHTML += " <div class=\"templatemo_product_box\"><h1>"+h1+"<span>("+span+")</span></h1><img src=\"<%=path %>"+img+"\" alt=\"image\" /><div class=\"product_info\"><p>"+p+"</p><h3>"+uploadtime+"</h3><div class=\"buy_now_button\"><a href=\"#\">查看</a></div><div class=\"detail_button\"><a href=\"#\">Detail</a></div></div><div class=\"cleaner\">&nbsp;</div></div>";
+                if (32 < p.length) {
+                    p = p.substr(0, 32);
+                }
+                div.innerHTML += " <div class=\"templatemo_product_box\"><h1>" + h1 + "<span>(" + span + ")</span></h1><img src=\"<%=path %>" + img + "\" alt=\"image\" /><div class=\"product_info\"><p>" + p + "</p><h3>" + uploadtime + "</h3><div class=\"buy_now_button\"><a href=\"#\">查看</a></div><div class=\"detail_button\"><a href=\"#\">Detail</a></div></div><div class=\"cleaner\">&nbsp;</div></div>";
                 if (i % 2 == 0) {
                     div.innerHTML += "<div class=\"cleaner_with_width\">&nbsp;</div>";
-                } else if (i % 2 == 1 ) {
+                } else if (i % 2 == 1) {
                     div.innerHTML += "<div class=\"cleaner_with_height\">&nbsp;</div>";
                 }
 

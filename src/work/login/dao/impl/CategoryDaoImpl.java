@@ -12,19 +12,19 @@ import java.util.List;
 
 public class CategoryDaoImpl implements CategoryDao {
     public List<Category> fiveTitle() throws SQLException {
-        String sql="SELECT id,title FROM category ORDER BY id ASC LIMIT 0,5;";
+        String sql="SELECT id,title,a FROM category ORDER BY id ASC LIMIT 0,5;";
         QueryRunner runner = new QueryRunner(DSutils.getDataSource());
         return  runner.query(sql, new BeanListHandler<>(Category.class));
     }
     public List<Category> AllTitle() throws SQLException {
-        String sql="SELECT id,title FROM category;";
+        String sql="SELECT id,title,a FROM category;";
         QueryRunner runner = new QueryRunner(DSutils.getDataSource());
         return  runner.query(sql, new BeanListHandler<>(Category.class));
     }
     @Test
     public void test1() throws SQLException {
         CategoryDao dao = new CategoryDaoImpl();
-        System.err.println(dao.AllTitle());
+        System.err.println(dao.fiveTitle());
 
 
     }

@@ -13,7 +13,7 @@ import java.util.List;
 public class FourContentDaoImpl implements FourContentDao {
     @Override
     public List<FourContent> fourContent() throws SQLException {
-        String sql="SELECT id,h1,span,img,p,uploadtime,a FROM index_content ORDER BY uploadtime DESC LIMIT 0,4;";
+        String sql="SELECT id,h1,span,img,p,uploadtime,a FROM index_content ORDER BY uploadtime DESC;";
         QueryRunner runner = new QueryRunner(DSutils.getDataSource());
         return  runner.query(sql, new BeanListHandler<>(FourContent.class));
     }

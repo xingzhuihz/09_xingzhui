@@ -3,13 +3,24 @@ package work.login.domain;
 public class Category {
     private int id;
     private String title;
+    private String a;
+
+    public Category(int id, String title, String a) {
+        this.id = id;
+        this.title = title;
+        this.a = a;
+    }
 
     @Override
     public String toString() {
-        return "CategoryDao{" +
+        return "Category{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
+                ", a='" + a + '\'' +
                 '}';
+    }
+
+    public Category() {
     }
 
     public int getId() {
@@ -20,19 +31,19 @@ public class Category {
         this.id = id;
     }
 
-    public String gettitle() {
+    public String getTitle() {
         return title;
     }
 
-    public void settitle(String title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
-    public Category(int id, String title) {
-        this.id = id;
-        this.title = title;
+    public String getA() {
+        return a;
     }
 
-    public Category() {
+    public void setA(String a) {
+        this.a = a;
     }
 }
