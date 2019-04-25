@@ -1,42 +1,40 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2019/4/16
-  Time: 20:45
+  Date: 2019/4/25
+  Time: 20:46
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <%String path = request.getContextPath(); %>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>乡土文化首页</title>
-    <meta name="keywords" content="Book Store Template, Free CSS Template, CSS Website Layout, CSS, HTML"/>
-    <meta name="description" content="Book Store Template, Free CSS Template, Download CSS Website"/>
-    <link href="<%=path %>css/templatemo_style.css" rel="stylesheet" type="text/css"/>
+    <%String path=request.getContextPath(); %>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>乡土文化</title>
+    <meta name="keywords" content="Book Store Template, Free CSS Template, CSS Website Layout, CSS, HTML, cssMoban.com" />
+    <meta name="description" content="Book Store Template, Free CSS Template, Download CSS Website from cssMoban.com" />
+    <link href="<%=path %>../css/templatemo_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="templatemo_container">
-    <%@ include file="jsps/index_home_head.jsp" %>
+    <%@ include file="index_home_head.jsp"%><!-- end of menu -->
 
     <div id="templatemo_header">
-        <%@ include file="jsps/index_home_head_left.jsp" %>
-        <%@ include file="jsps/index_home_head_right.jsp" %>
-
-
+        <%@ include file="index_home_head_left.jsp"%>
+        <%@ include file="index_home_head_right.jsp"%>
     </div> <!-- end of header -->
 
     <div id="templatemo_content">
 
         <div id="templatemo_content_left">
-            <%@ include file="jsps/index_home_content_left.jsp" %>
+            <%@ include file="index_home_content_left.jsp"%>
+
 
 
         </div> <!-- end of content left -->
 
         <div id="templatemo_content_right">
 
-            <%--4个最新内容--%>
 
 
         </div> <!-- end of content right -->
@@ -44,8 +42,7 @@
         <div class="cleaner_with_height">&nbsp;</div>
     </div> <!-- end of content -->
 
-    <%@ include file="jsps/index_home_foot.jsp" %>
-    <!-- end of footer -->
+    <%@ include file="index_home_foot.jsp"%> <!-- end of footer -->
     <!--  Free CSS Template www.cssmoban.com -->
 </div> <!-- end of container -->
 </body>
@@ -54,21 +51,21 @@
         //创建异步对象
         let fTitle;
         let allTitle;
-        let fourContent;
+        let content;
         if (window.XMLHttpRequest) {
             fTitle = new XMLHttpRequest();
             allTitle = new XMLHttpRequest();
-            fourContent = new XMLHttpRequest();
+            content = new XMLHttpRequest();
         } else {
             try {
                 fTitle = new ActiveXObject("Msxm12.XMLHTTP");
                 allTitle = new ActiveXObject("Msxm12.XMLHTTP");
-                fourContent = new ActiveXObject("Msxm12.XMLHTTP");
+                content = new ActiveXObject("Msxm12.XMLHTTP")
 
             } catch (e) {
                 fTitle = new ActiveXObject("Microsoft.XMLHTTP");
                 allTitle = new ActiveXObject("Microsoft.XMLHTTP");
-                fourContent = new ActiveXObject("Microsoft.XMLHTTP");
+                content = new ActiveXObject("Microsoft.XMLHTTP")
             }
         }
 
@@ -78,8 +75,53 @@
         //全部标题
         allTitle.open("GET", "<%=path %>/index?method=allTitle", true);
 
-        //4个最新内容
-        fourContent.open("GET", "<%=path %>/index?method=fourContent", true);
+        // 显示内容
+        content.open("GET", "<%=path %>/index?method=fourContent", true);
+
+
+
+
+        content.onreadystatechange = function () {
+            if (4 == content.readyState) {
+                if (200 == content.status) {
+                    let result = content.responseText;
+                    // typeof显示数据类型
+                    //类型转换 object
+                    result = JSON.parse(result);
+                    // alert(typeof result);
+                    displayContent(result);
+
+                }
+            }
+
+        };
+        content.send();
+
+        function displayContent(json) {
+            let div = document.getElementById("templatemo_content_right");
+            div.innerHTML = "";
+            let len = json.length;
+            for (let i = 0; i < len; i++){
+                let obj = json[i];
+                let id = obj.id;
+                let h1 = obj.h1;
+                let a = obj.a;
+                let span = obj.span;
+                let img = obj.img;
+                let uploadtime = obj.uploadtime;
+                let p = obj.p;
+                if (a.substr(0, 4).match("xtwh")) {
+                    div.innerHTML += "<h1>" + h1 + " <span>(" + span + ")</span></h1><div class=\"image_panel\"><img src=\"<%=path %>../" + img + "\" alt=\"CSS Template\" width=\"100\" height=\"150\" /></div><h2>XXXXXXXXXXXXX</h2><ul><li>XXXX<a href=\"#\">XXX</a></li><li>" + uploadtime + "</li><li>Pages: 498</li><li>ISBN 10: 0-496-91612-0 | ISBN 13: 9780492518154</li></ul><p>" + p + "</p><p>XXXXXXXXXXXXXXXXXXXX</p>";
+                    div.innerHTML += "<div class=\"cleaner_with_height\">&nbsp;</div>";
+                    div.innerHTML += "<a href=\"#\"><img src=\"<%=path %>../images/templatemo_ads.jpg\" alt=\"css template ad\" /></a>";
+                    break;
+                }
+            }  
+           
+           
+
+        }
+
 
         fTitle.onreadystatechange = function () {
             if (4 == fTitle.readyState) {
@@ -108,7 +150,7 @@
                 let id = obj.id;
                 let title = obj.title;
                 let a = obj.a;
-                ul.innerHTML += " <li><a href=\"<%=path %>jsps/" + a + "\">" + title + "</a></li>";
+                ul.innerHTML += " <li><a href=\"<%=path %>" + a + "\">" + title + "</a></li>";
             }
             ul.innerHTML += "<li><a href=\"../login.jsp\">登录 </a></li>";
             //尾部
@@ -119,8 +161,7 @@
                 let obj = json[i];
                 let id = obj.id;
                 let title = obj.title;
-                let a = obj.a;
-                div.innerHTML += " <a href=\"<%=path %>jsps/"+a+"\">" + title + "</a> |";
+                div.innerHTML += " <a href=\"#\">" + title + "</a> |";
             }
             div.innerHTML += "<a href=\"#\">联系我们</a><br />";
             div.innerHTML += "Copyright © 2024 <a href=\"#\"><strong>乡土文化</strong></a> | from <a href=\"#\" target=\"_parent\" title=\"网站模板\">星骓</a>";
@@ -175,8 +216,8 @@
                     let title = obj.title;
                     let a = obj.a;
                     if (22 >= i) {
-                        ul2.innerHTML += " <li><a href=\"<%=path%>" + a + "\">" + title + "</a></li>";
-                    } else if (23 == i) {
+                        ul2.innerHTML += " <li><a href=\"<%=path%>"+a+"\">" + title + "</a></li>";
+                    }else if (23 == i) {
                         break;
                     }
 
@@ -186,56 +227,7 @@
 
         }
 
-        //显示4个最新内容
-        fourContent.onreadystatechange = function () {
-            if (4 == fourContent.readyState) {
-                if (200 == fourContent.status) {
-                    let result = fourContent.responseText;
-                    // typeof显示数据类型
-                    //类型转换 object
-                    result = JSON.parse(result);
-                    // alert(result);
-                    displayFourContent(result);
-
-                }
-            }
-
-        };
-        fourContent.send();
-
-        function displayFourContent(json) {
-            let div = document.getElementById("templatemo_content_right");
-            div.innerHTML = "";
-
-            let len = json.length;
-
-            for (let i = 0; i < 4; i++) {
-                let obj = json[i];
-                let id = obj.id;
-                let h1 = obj.h1;
-                let span = obj.span;
-                let img = obj.img;
-                let a = obj.a;
-                let uploadtime = obj.uploadtime;
-                let p = obj.p;
-                if (32 < p.length) {
-                    p = p.substr(0, 32);
-                }
-                div.innerHTML += " <div class=\"templatemo_product_box\"><h1>" + h1 + "<span>(" + span + ")</span></h1><img src=\"<%=path %>" + img + "\" alt=\"image\" /><div class=\"product_info\"><p>" + p + "</p><h3>" + uploadtime + "</h3><div class=\"buy_now_button\"><a href=\"<%=path %>jsps/"+a+"\">查看</a></div><div class=\"detail_button\"><a href=\"#\">Detail</a></div></div><div class=\"cleaner\">&nbsp;</div></div>";
-                if (i % 2 == 0) {
-                    div.innerHTML += "<div class=\"cleaner_with_width\">&nbsp;</div>";
-                } else if (i % 2 == 1) {
-                    div.innerHTML += "<div class=\"cleaner_with_height\">&nbsp;</div>";
-                }
-
-
-            }
-            div.innerHTML += "<a href=\"#\"><img src=\"<%=path %>images/templatemo_ads.jpg\" alt=\"ads\" /></a>";
-
-        }
 
     }
-
-
 </script>
 </html>

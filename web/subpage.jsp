@@ -153,6 +153,7 @@
             let ul = document.getElementById("fiveTitle");
             ul.innerHTML = "";
             ul.innerHTML += "<li><a href=\"../index_home.jsp\" class=\"current\">首页</a></li>";
+            ul.innerHTML += "<li><a href=\"../subpage.jsp\" class=\"current\">热点文章</a></li>";
             let len = json.length;
             for (let i = 0; i < len; i++) {
                 let obj = json[i];

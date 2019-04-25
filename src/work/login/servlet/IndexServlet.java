@@ -1,13 +1,7 @@
 package work.login.servlet;
 
-import work.login.service.AdvertService;
-import work.login.service.CategoryService;
-import work.login.service.FourContentService;
-import work.login.service.NativeProductService;
-import work.login.service.impl.AdvertServiceImpl;
-import work.login.service.impl.CategoryServiceImpl;
-import work.login.service.impl.FourContentServiceImpl;
-import work.login.service.impl.NativeProductServiceImpl;
+import work.login.service.*;
+import work.login.service.impl.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -181,6 +175,7 @@ public class IndexServlet extends HttpServlet {
             new RuntimeException(e);
         }
     }
+
     /**
      * 分类信息显示
      *

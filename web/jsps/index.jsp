@@ -384,22 +384,26 @@
         let xhr2;
         let xhr3;
         let ad1;
+
         if (window.XMLHttpRequest) {
             xhr = new XMLHttpRequest();
             xhr2 = new XMLHttpRequest();
             xhr3 = new XMLHttpRequest();
             ad1 = new XMLHttpRequest();
+
         } else {
             try {
                 ad1 = new ActiveXObject("Msxm12.XMLHTTP");
                 xhr = new ActiveXObject("Msxml2.XMLHTTP");
                 xhr2 = new ActiveXObject("Msxml2.XMLHTTP");
                 xhr3 = new ActiveXObject("Msxml2.XMLHTTP");
+
             } catch (e) {
                 xhr = new ActiveXObject("Microsoft.XMLHTTP");
                 xhr2 = new ActiveXObject("Microsoft.XMLHTTP");
                 ad1 = new ActiveXObject("Microsoft.XMLHTTP");
                 xhr3 = new ActiveXObject("Microsoft.XMLHTTP");
+
             }
         }
 
