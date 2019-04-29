@@ -50,141 +50,30 @@
 </div> <!-- end of container -->
 </body>
 <script>
+
+
     window.onload = function () {
+        <%@include file="js/init.js" %>
         //创建异步对象
-        let fTitle;
-        let allTitle;
         let fourContent;
         if (window.XMLHttpRequest) {
-            fTitle = new XMLHttpRequest();
-            allTitle = new XMLHttpRequest();
+
             fourContent = new XMLHttpRequest();
         } else {
             try {
-                fTitle = new ActiveXObject("Msxm12.XMLHTTP");
-                allTitle = new ActiveXObject("Msxm12.XMLHTTP");
+
                 fourContent = new ActiveXObject("Msxm12.XMLHTTP");
 
             } catch (e) {
-                fTitle = new ActiveXObject("Microsoft.XMLHTTP");
-                allTitle = new ActiveXObject("Microsoft.XMLHTTP");
+
                 fourContent = new ActiveXObject("Microsoft.XMLHTTP");
             }
         }
 
-        //首页5个标题
-        fTitle.open("GET", "<%=path %>/index?method=fiveTitle", true);
-
-        //全部标题
-        allTitle.open("GET", "<%=path %>/index?method=allTitle", true);
 
         //4个最新内容
         fourContent.open("GET", "<%=path %>/index?method=fourContent", true);
 
-        fTitle.onreadystatechange = function () {
-            if (4 == fTitle.readyState) {
-                if (200 == fTitle.status) {
-                    let result = fTitle.responseText;
-                    // typeof显示数据类型
-                    //类型转换 object
-                    result = JSON.parse(result);
-                    // alert(typeof result);
-                    displayFiveTitle(result);
-
-                }
-            }
-
-        };
-        fTitle.send();
-
-        function displayFiveTitle(json) {
-            let ul = document.getElementById("fiveTitle");
-            ul.innerHTML = "";
-            ul.innerHTML += "<li><a href=\"../index_home.jsp\" class=\"current\">首页</a></li>";
-            ul.innerHTML += "<li><a href=\"../subpage.jsp\" class=\"current\">热点文章</a></li>";
-            let len = json.length;
-            for (let i = 0; i < len; i++) {
-                let obj = json[i];
-                let id = obj.id;
-                let title = obj.title;
-                let a = obj.a;
-                ul.innerHTML += " <li><a href=\"<%=path %>jsps/" + a + "\">" + title + "</a></li>";
-            }
-            ul.innerHTML += "<li><a href=\"../login.jsp\">登录 </a></li>";
-            //尾部
-            let div = document.getElementById("templatemo_footer");
-            div.innerHTML = "";
-            div.innerHTML += "<a href=\"../index_home.jsp\">首页</a> |";
-            for (let i = 0; i < len; i++) {
-                let obj = json[i];
-                let id = obj.id;
-                let title = obj.title;
-                let a = obj.a;
-                div.innerHTML += " <a href=\"<%=path %>jsps/"+a+"\">" + title + "</a> |";
-            }
-            div.innerHTML += "<a href=\"#\">联系我们</a><br />";
-            div.innerHTML += "Copyright © 2024 <a href=\"#\"><strong>乡土文化</strong></a> | from <a href=\"#\" target=\"_parent\" title=\"网站模板\">星骓</a>";
-
-
-        }
-
-        //显示全部标题
-        allTitle.onreadystatechange = function () {
-            if (4 == allTitle.readyState) {
-                if (200 == allTitle.status) {
-                    let result = allTitle.responseText;
-                    // typeof显示数据类型
-                    //类型转换 object
-                    result = JSON.parse(result);
-                    // alert(resul);
-                    displayAllTitle(result);
-
-                }
-            }
-
-        };
-        allTitle.send();
-
-        function displayAllTitle(json) {
-            let ul1 = document.getElementById("content_left_title1");
-            ul1.innerHTML = "";
-
-            let len = json.length;
-            if (6 <= len) {
-                for (let i = 5; i < len; i++) {
-                    let obj = json[i];
-                    let id = obj.id;
-                    let title = obj.title;
-                    let a = obj.a;
-                    if (13 >= i) {
-                        ul1.innerHTML += " <li><a href=\"<%=path%>" + a + "\">" + title + "</a></li>";
-                    } else if (14 == i) {
-                        break;
-                    }
-                }
-            }
-
-
-            let ul2 = document.getElementById("content_left_title2");
-            ul2.innerHTML = "";
-
-            if (15 <= len) {
-                for (let i = 14; i < len; i++) {
-                    let obj = json[i];
-                    let id = obj.id;
-                    let title = obj.title;
-                    let a = obj.a;
-                    if (22 >= i) {
-                        ul2.innerHTML += " <li><a href=\"<%=path%>" + a + "\">" + title + "</a></li>";
-                    } else if (23 == i) {
-                        break;
-                    }
-
-                }
-            }
-
-
-        }
 
         //显示4个最新内容
         fourContent.onreadystatechange = function () {
@@ -221,7 +110,7 @@
                 if (32 < p.length) {
                     p = p.substr(0, 32);
                 }
-                div.innerHTML += " <div class=\"templatemo_product_box\"><h1>" + h1 + "<span>(" + span + ")</span></h1><img src=\"<%=path %>" + img + "\" alt=\"image\" /><div class=\"product_info\"><p>" + p + "</p><h3>" + uploadtime + "</h3><div class=\"buy_now_button\"><a href=\"<%=path %>jsps/"+a+"\">查看</a></div><div class=\"detail_button\"><a href=\"#\">Detail</a></div></div><div class=\"cleaner\">&nbsp;</div></div>";
+                div.innerHTML += " <div class=\"templatemo_product_box\"><h1>" + h1 + "<span>(" + span + ")</span></h1><img src=\"<%=path %>" + img + "\" alt=\"image\" /><div class=\"product_info\"><p>" + p + "</p><h3>" + uploadtime + "</h3><div class=\"buy_now_button\"><a href=\"<%=path %>jsps/" + a + "\">查看</a></div><div class=\"detail_button\"><a href=\"#\">Detail</a></div></div><div class=\"cleaner\">&nbsp;</div></div>";
                 if (i % 2 == 0) {
                     div.innerHTML += "<div class=\"cleaner_with_width\">&nbsp;</div>";
                 } else if (i % 2 == 1) {
@@ -230,6 +119,7 @@
 
 
             }
+
             div.innerHTML += "<a href=\"#\"><img src=\"<%=path %>images/templatemo_ads.jpg\" alt=\"ads\" /></a>";
 
         }

@@ -48,32 +48,24 @@
 </body>
 <script>
     window.onload = function () {
+        <%@include file="../js/initCategory.js"%>
         //创建异步对象
-        let fTitle;
-        let allTitle;
+
         let content;
         if (window.XMLHttpRequest) {
-            fTitle = new XMLHttpRequest();
-            allTitle = new XMLHttpRequest();
+
             content = new XMLHttpRequest();
         } else {
             try {
-                fTitle = new ActiveXObject("Msxm12.XMLHTTP");
-                allTitle = new ActiveXObject("Msxm12.XMLHTTP");
+
                 content = new ActiveXObject("Msxm12.XMLHTTP")
 
             } catch (e) {
-                fTitle = new ActiveXObject("Microsoft.XMLHTTP");
-                allTitle = new ActiveXObject("Microsoft.XMLHTTP");
+
                 content = new ActiveXObject("Microsoft.XMLHTTP")
             }
         }
 
-        //首页5个标题
-        fTitle.open("GET", "<%=path %>/index?method=fiveTitle", true);
-
-        //全部标题
-        allTitle.open("GET", "<%=path %>/index?method=allTitle", true);
 
         // 显示内容
         content.open("GET", "<%=path %>/index?method=fourContent", true);
@@ -113,120 +105,12 @@
                 if (a.substr(0, 4).match("xtxs")) {
                     div.innerHTML += "<h1>" + h1 + " <span>(" + span + ")</span></h1><div class=\"image_panel\"><img src=\"<%=path %>../" + img + "\" alt=\"CSS Template\" width=\"100\" height=\"150\" /></div><h2>XXXXXXXXXXXXX</h2><ul><li>XXXX<a href=\"#\">XXX</a></li><li>" + uploadtime + "</li><li>Pages: 498</li><li>ISBN 10: 0-496-91612-0 | ISBN 13: 9780492518154</li></ul><p>" + p + "</p><p>XXXXXXXXXXXXXXXXXXXX</p>";
                     div.innerHTML += "<div class=\"cleaner_with_height\">&nbsp;</div>";
-                    div.innerHTML += "<a href=\"#\"><img src=\"<%=path %>../images/templatemo_ads.jpg\" alt=\"css template ad\" /></a>";
-                    break;
+
                 }
             }
-
-
+            div.innerHTML += "<a href=\"#\"><img src=\"<%=path %>../images/templatemo_ads.jpg\" alt=\"css template ad\" /></a>";
 
         }
-
-
-        fTitle.onreadystatechange = function () {
-            if (4 == fTitle.readyState) {
-                if (200 == fTitle.status) {
-                    let result = fTitle.responseText;
-                    // typeof显示数据类型
-                    //类型转换 object
-                    result = JSON.parse(result);
-                    // alert(typeof result);
-                    displayFiveTitle(result);
-
-                }
-            }
-
-        };
-        fTitle.send();
-
-        function displayFiveTitle(json) {
-            let ul = document.getElementById("fiveTitle");
-            ul.innerHTML = "";
-            ul.innerHTML += "<li><a href=\"../index_home.jsp\" class=\"current\">首页</a></li>";
-            ul.innerHTML += "<li><a href=\"../subpage.jsp\" class=\"current\">热点文章</a></li>";
-            let len = json.length;
-            for (let i = 0; i < len; i++) {
-                let obj = json[i];
-                let id = obj.id;
-                let title = obj.title;
-                let a = obj.a;
-                ul.innerHTML += " <li><a href=\"<%=path %>" + a + "\">" + title + "</a></li>";
-            }
-            ul.innerHTML += "<li><a href=\"../login.jsp\">登录 </a></li>";
-            //尾部
-            let div = document.getElementById("templatemo_footer");
-            div.innerHTML = "";
-            div.innerHTML += "<a href=\"../index_home.jsp\">首页</a> |";
-            for (let i = 0; i < len; i++) {
-                let obj = json[i];
-                let id = obj.id;
-                let title = obj.title;
-                div.innerHTML += " <a href=\"#\">" + title + "</a> |";
-            }
-            div.innerHTML += "<a href=\"#\">联系我们</a><br />";
-            div.innerHTML += "Copyright © 2024 <a href=\"#\"><strong>乡土文化</strong></a> | from <a href=\"#\" target=\"_parent\" title=\"网站模板\">星骓</a>";
-
-
-        }
-
-        //显示全部标题
-        allTitle.onreadystatechange = function () {
-            if (4 == allTitle.readyState) {
-                if (200 == allTitle.status) {
-                    let result = allTitle.responseText;
-                    // typeof显示数据类型
-                    //类型转换 object
-                    result = JSON.parse(result);
-                    // alert(resul);
-                    displayAllTitle(result);
-
-                }
-            }
-
-        };
-        allTitle.send();
-
-        function displayAllTitle(json) {
-            let ul1 = document.getElementById("content_left_title1");
-            ul1.innerHTML = "";
-
-            let len = json.length;
-            if (6 <= len) {
-                for (let i = 5; i < len; i++) {
-                    let obj = json[i];
-                    let id = obj.id;
-                    let title = obj.title;
-                    let a = obj.a;
-                    if (13 >= i) {
-                        ul1.innerHTML += " <li><a href=\"<%=path%>" + a + "\">" + title + "</a></li>";
-                    } else if (14 == i) {
-                        break;
-                    }
-                }
-            }
-
-
-            let ul2 = document.getElementById("content_left_title2");
-            ul2.innerHTML = "";
-
-            if (15 <= len) {
-                for (let i = 14; i < len; i++) {
-                    let obj = json[i];
-                    let id = obj.id;
-                    let title = obj.title;
-                    let a = obj.a;
-                    if (22 >= i) {
-                        ul2.innerHTML += " <li><a href=\"<%=path%>"+a+"\">" + title + "</a></li>";
-                    }else if (23 == i) {
-                        break;
-                    }
-
-                }
-            }
-
-
-        }
-
 
     }
 </script>
