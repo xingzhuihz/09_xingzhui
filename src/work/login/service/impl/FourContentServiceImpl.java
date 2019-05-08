@@ -24,8 +24,22 @@ public class FourContentServiceImpl implements FourContentService {
         return JSONArray.fromObject(list).toString();
     }
 
+    @Override
+    public String getJsonAllContent() throws Exception {
+        FourContentDao dao = new FourContentDaoImpl();
+        List<FourContent> list = dao.allContent();
+
+        return JSONArray.fromObject(list).toString();
+    }
+
+
     @Test
     public void test()throws  Exception {
-        System.err.println(new FourContentServiceImpl().getJsonFourContent());
+        System.err.println(new FourContentServiceImpl().getJsonAllContent());
+    }
+
+    public void addContent(FourContent content) throws Exception {
+        FourContentDao dao = new FourContentDaoImpl();
+        dao.addConetn(content);
     }
 }

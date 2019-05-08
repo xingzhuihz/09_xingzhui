@@ -45,6 +45,9 @@ public class IndexServlet extends HttpServlet {
             //分类信息显示
             getCategory(request, response);
 
+        }else if ("allContent".equals(method)) {
+            //内容
+            allContent(request, response);
         }
     }
 
@@ -175,7 +178,24 @@ public class IndexServlet extends HttpServlet {
             new RuntimeException(e);
         }
     }
+    private void allContent(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            // 输出格式
+            response.setContentType("text/json;charset=utf-8");
 
+            // 获取json字符串
+            FourContentService service = new FourContentServiceImpl();
+
+            String jsonAllContent = service.getJsonAllContent();
+
+            // 输出结果
+            response.getWriter().write(jsonAllContent);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            new RuntimeException(e);
+        }
+    }
     /**
      * 分类信息显示
      *

@@ -5,7 +5,7 @@
   Time: 20:45
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  %>
 <html>
 <head>
     <%String path = request.getContextPath(); %>
@@ -53,6 +53,7 @@
 
 
     window.onload = function () {
+
         <%@include file="js/init.js" %>
         //创建异步对象
         let fourContent;
@@ -110,7 +111,7 @@
                 if (32 < p.length) {
                     p = p.substr(0, 32);
                 }
-                div.innerHTML += " <div class=\"templatemo_product_box\"><h1>" + h1 + "<span>(" + span + ")</span></h1><img src=\"<%=path %>" + img + "\" alt=\"image\" /><div class=\"product_info\"><p>" + p + "</p><h3>" + uploadtime + "</h3><div class=\"buy_now_button\"><a href=\"<%=path %>jsps/" + a + "\">查看</a></div><div class=\"detail_button\"><a href=\"#\">Detail</a></div></div><div class=\"cleaner\">&nbsp;</div></div>";
+                div.innerHTML += " <div class=\"templatemo_product_box\"><h1>" + h1 + "<span>(" + span + ")</span></h1><img src=\"<%=path %>" + img + "\" alt=\"image\" /><div class=\"product_info\"><p>" + p + "</p><h3>" + uploadtime + "</h3><div class=\"buy_now_button\"><a href=\"<%=path %>jsps/" + a + "\">查看</a></div><div class=\"detail_button\"><a href=\"<%=path%>/category?method=toCategoryage&categoryId="+ id +"\">Detail</a></div></div><div class=\"cleaner\">&nbsp;</div></div>";
                 if (i % 2 == 0) {
                     div.innerHTML += "<div class=\"cleaner_with_width\">&nbsp;</div>";
                 } else if (i % 2 == 1) {

@@ -17,10 +17,28 @@ public class FourContentDaoImpl implements FourContentDao {
         QueryRunner runner = new QueryRunner(DSutils.getDataSource());
         return  runner.query(sql, new BeanListHandler<>(FourContent.class));
     }
+
+    @Override
+    public List<FourContent> allContent() throws SQLException {
+        String sql="SELECT id,h1,span,img,p,uploadtime,a FROM index_content;";
+        QueryRunner runner = new QueryRunner(DSutils.getDataSource());
+        return  runner.query(sql, new BeanListHandler<>(FourContent.class));
+    }
+
+    @Override
+    public void addConetn(FourContent content) throws SQLException {
+        QueryRunner runner = new QueryRunner(DSutils.getDataSource());
+        String sql = "insert into index_content (h1,span,img,p,uploadtime,a) values (?,?,?,?,?,?);";
+        runner.update(sql,  content.getH1(), content.getSpan(),
+                content.getImg(), content.getP(), content.getUploadtime(),
+                content.getA());
+    }
+
+
     @Test
     public void test1() throws SQLException {
         FourContentDao dao = new FourContentDaoImpl();
-        System.err.println( dao.fourContent());
+        System.err.println( dao.allContent());
 
 
     }

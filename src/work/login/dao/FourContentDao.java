@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface FourContentDao {
     List<FourContent> fourContent() throws SQLException;
+    List<FourContent> allContent() throws SQLException;
 
+    void addConetn(FourContent content) throws SQLException;
 }

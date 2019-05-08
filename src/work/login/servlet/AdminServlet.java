@@ -2,7 +2,9 @@ package work.login.servlet;
 
 import work.login.domain.Admin;
 import work.login.service.AdminService;
+import work.login.service.FourContentService;
 import work.login.service.impl.AdminServiceImpl;
+import work.login.service.impl.FourContentServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -52,6 +54,7 @@ public class AdminServlet extends HttpServlet {
                 response.getWriter().print("<span style='color:green'>登陆成功</span>");
                 request.getRequestDispatcher("/index_manage.jsp").forward(request, response);
                 //跳去登陆页面
+
             }
 
         } catch (Exception e) {
@@ -59,5 +62,8 @@ public class AdminServlet extends HttpServlet {
             request.getRequestDispatcher("/msg.jsp").forward(request, response);
         }
 
+
     }
+
+
 }
