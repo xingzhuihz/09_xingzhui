@@ -16,4 +16,6 @@ public interface FourContentService {
     String getJsonAllContent() throws Exception;
 
     void addContent(FourContent content) throws Exception;
+
+    FourContent getContentById(String cid) throws Exception;
 }

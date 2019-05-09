@@ -10,4 +10,6 @@ public interface FourContentDao {
     List<FourContent> allContent() throws SQLException;
 
     void addConetn(FourContent content) throws SQLException;
+
+    FourContent getContentById(String cid) throws Exception;
 }

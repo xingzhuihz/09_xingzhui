@@ -1,4 +1,4 @@
-<%--
+<%@ page import="work.login.utils.UUIDUtils" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2019/4/16
@@ -65,6 +65,7 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.nouislider.css">
 </head>
 <body>
+
 <div id="wrap">
     <!-- 左侧菜单栏目块 -->
     <div class="leftMeun" id="leftMeun">
@@ -92,10 +93,10 @@
                 src="images/icon_change_grey.png">修改密码
         </div>
         <div class="meun-title">内容管理</div>
-        <div class="meun-item" href="#scho" aria-controls="scho" role="tab" data-toggle="tab"><img
+        <div class="meun-item" href="#scho" aria-controls="scho" role="tab" data-toggle="tab" name="floor1"><img
                 src="images/icon_house_grey.png">内容管理
         </div>
-        <div class="meun-item" href="#regu" aria-controls="regu" role="tab" data-toggle="tab"><img
+        <div class="meun-item" href="#regu" aria-controls="regu" role="tab" data-toggle="tab" name="floor2"><img
                 src="images/icon_rule_grey.png">规则管理
         </div>
         <div class="meun-item" href="#stud" aria-controls="stud" role="tab" data-toggle="tab"><img
@@ -906,6 +907,8 @@
                 </div>
                 <!-- /.modal -->
 
+
+
                 <!--弹出修改用户窗口-->
                 <div class="modal fade" id="reviseUser" role="dialog" aria-labelledby="gridSystemModalLabel">
                     <div class="modal-dialog" role="document">
@@ -1048,7 +1051,7 @@
 
             </div>
             <!--地区管理模块-->
-            <div role="tabpanel" class="tab-pane" id="scho">
+            <div role="tabpanel" class="tab-pane" id="scho" >
 
                 <div class="check-div form-inline">
                     <div class="col-xs-3">
@@ -1154,7 +1157,16 @@
                         </li>
                     </ul>
                 </footer>
-                <form method="post" action="<%=path %>/page">
+                <%
+                    String code = UUIDUtils.getCode();
+
+                    // 将code放入session 后台验证
+                    session.setAttribute("s_lingpai", code);
+
+
+                %>
+                <form method="post" action="<%=path %>/contentadd">
+                    <input type="hidden" name="code_lingpai" value="<%=code %>">
                 <!--弹出添加用户窗口-->
                 <div class="modal fade" id="addSchool" role="dialog" aria-labelledby="gridSystemModalLabel">
                     <div class="modal-dialog" role="document">
@@ -1171,7 +1183,7 @@
                                             <div class="form-group ">
                                                 <label for="sName" class="col-xs-3 control-label">主题：</label>
 
-                                                <input type="email" class="form-control input-sm duiqi" id="sTitle"
+                                                <input type="text" class="form-control input-sm duiqi" id="sTitle"
                                                        name="ctitle" placeholder="">
 
                                             </div>
@@ -1207,7 +1219,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                                    <button type="button" class="btn btn-xs btn-white" data-dismiss="modal" >取 消</button>
                                     <button type="submit" class="btn btn-xs btn-green">确 定</button>
                                 </div>
 
@@ -1218,45 +1230,54 @@
                 </div>
                 <!-- /.modal -->
                 </form>
+
                 <!--弹出修改用户窗口-->
+                <form method="post" action="<%=path %>/contentupdate" >
                 <div class="modal fade" id="reviseSchool" role="dialog" aria-labelledby="gridSystemModalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                         aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="gridSystemModalLabel">修改地区</h4>
+                                <h4 class="modal-title" id="gridSystemModalLabel">修改内容</h4>
                             </div>
                             <div class="modal-body">
                                 <div class="container-fluid">
                                     <form class="form-horizontal">
                                         <div class="form-group ">
-                                            <label for="sName" class="col-xs-3 control-label">地区名称：</label>
-                                            <div class="col-xs-8 ">
-                                                <input type="email" class="form-control input-sm duiqi" id="sName"
+                                            <label for="sName" class="col-xs-3 control-label">主题：</label>
+
+                                                <input type="email" class="form-control input-sm duiqi" id="sName" value="${c_id.h1}"
                                                        placeholder="">
-                                            </div>
+
                                         </div>
                                         <div class="form-group ">
-                                            <label for="sName" class="col-xs-3 control-label">经度：</label>
-                                            <div class="col-xs-8 ">
-                                                <input type="email" class="form-control input-sm duiqi" id="sName"
+                                            <label for="sName" class="col-xs-3 control-label">作者：</label>
+
+                                                <input type="email" class="form-control input-sm duiqi" id="sName" value="${c_id.span}"
                                                        placeholder="">
-                                            </div>
+
                                         </div>
                                         <div class="form-group">
-                                            <label for="sLink" class="col-xs-3 control-label">纬度：</label>
-                                            <div class="col-xs-8 ">
-                                                <input type="" class="form-control input-sm duiqi" id="sLink"
+                                            <label for="sLink" class="col-xs-3 control-label">时间：</label>
+
+                                                <input type="" class="form-control input-sm duiqi" id="sLink" value="${c_id.uploadtime}"
                                                        placeholder="">
-                                            </div>
+
                                         </div>
                                         <div class="form-group">
-                                            <label for="sOrd" class="col-xs-3 control-label">简称：</label>
+                                            <label for="sOrd" class="col-xs-3 control-label">内容：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm duiqi" id="sOrd"
+                                                <input type="" class="form-control input-sm duiqi" id="sOrd" value="${c_id.p}"
                                                        placeholder="">
                                             </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="sOrd" class="col-xs-3 control-label">封面：</label>
+
+                                                <input type="" class="form-control input-sm duiqi" id="sOrd" value="${c_id.img}"
+                                                       placeholder="">
+
                                         </div>
                                     </form>
                                 </div>
@@ -1271,7 +1292,7 @@
                     <!-- /.modal-dialog -->
                 </div>
                 <!-- /.modal -->
-
+                </form>
                 <!--弹出删除用户警告窗口-->
                 <div class="modal fade" id="deleteSchool" role="dialog" aria-labelledby="gridSystemModalLabel">
                     <div class="modal-dialog" role="document">
@@ -1283,12 +1304,12 @@
                             </div>
                             <div class="modal-body">
                                 <div class="container-fluid">
-                                    确定要删除该地区？删除后不可恢复！
+                                    确定要删除该内容？删除后不可恢复！
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
-                                <button type="button" class="btn btn-xs btn-danger">保 存</button>
+                                <button type="button" class="btn btn-xs btn-danger" onclick="deleteContent()">确 认</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -2121,6 +2142,7 @@
     huadong('.slider-minmax5', "天", "3", 7);
     huadong('.slider-minmax6', "天", "8", 10);
 </script>
+
 <script>
 
 
@@ -2182,7 +2204,9 @@
                 if (10 < p.length) {
                     p = p.substr(0, 10);
                 }
-                div.innerHTML += "<div class=\"row\"><div class=\"col-xs-1\">" + id + "</div><div class=\"col-xs-2\">" + h1 + "</div><div class=\"col-xs-1\">" + span + "</div><div class=\"col-xs-1\">" + uploadtime + "</div><div class=\"col-xs-2\">" + p + "</div><div class=\"col-xs-2\">" + img + "<%--<a class=\"linkCcc\">查看</a>--%></div><div class=\"col-xs-2\"><button class=\"btn btn-success btn-xs\" data-toggle=\"modal\" data-target=\"#reviseSchool\">修改</button><button class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" data-target=\"#deleteSchool\">删除</button></div></div>";
+
+                div.innerHTML += "<div class=\"row\"><div class=\"col-xs-1\" name=\"content_id\">" + id + "</div><div class=\"col-xs-2\">" + h1 + "</div><div class=\"col-xs-1\">" + span + "</div><div class=\"col-xs-1\">" + uploadtime + "</div><div class=\"col-xs-2\">" + p + "</div><div class=\"col-xs-2\">" + img + "<%--<a class=\"linkCcc\">查看</a>--%></div><div class=\"col-xs-2\"><button  class=\"btn btn-success btn-xs\" data-toggle=\"modal\" data-target=\"#reviseSchool\"><a href=\"<%=path %>/contentquery?cid="+ id +"\">修改</a></button><button class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" data-target=\"#deleteSchool\">删除</button></div></div>";
+                <%--div.innerHTML += "<div class=\"row\"><div class=\"col-xs-1\" name=\"content_id\">" + id + "</div><div class=\"col-xs-2\">" + h1 + "</div><div class=\"col-xs-1\">" + span + "</div><div class=\"col-xs-1\">" + uploadtime + "</div><div class=\"col-xs-2\">" + p + "</div><div class=\"col-xs-2\">" + img + "&lt;%&ndash;<a class=\"linkCcc\">查看</a>&ndash;%&gt;</div><div class=\"col-xs-2\"><form method=\"post\" action=\"<%=path %>/contentquery?cid="+ id +"\"><button  class=\"btn btn-success btn-xs\" data-toggle=\"modal\" data-target=\"#reviseSchool\">修改</button></form><button class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" data-target=\"#deleteSchool\">删除</button></div></div>";--%>
 
             }
 

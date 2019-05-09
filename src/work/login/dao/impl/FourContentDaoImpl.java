@@ -1,6 +1,7 @@
 package work.login.dao.impl;
 
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.junit.Test;
 import work.login.dao.FourContentDao;
@@ -34,11 +35,18 @@ public class FourContentDaoImpl implements FourContentDao {
                 content.getA());
     }
 
+    @Override
+    public FourContent getContentById(String cid) throws SQLException{
+        QueryRunner runner = new QueryRunner(DSutils.getDataSource());
+        String sql = "select * from index_content where id = ?";
+        return runner.query(sql,new BeanHandler<>(FourContent.class),Integer.valueOf(cid));
+    }
+
 
     @Test
-    public void test1() throws SQLException {
+    public void test1() throws Exception {
         FourContentDao dao = new FourContentDaoImpl();
-        System.err.println( dao.allContent());
+        System.err.println( dao.getContentById("1"));
 
 
     }
