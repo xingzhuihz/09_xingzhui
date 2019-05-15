@@ -93,7 +93,7 @@
                 src="images/icon_change_grey.png">修改密码
         </div>
         <div class="meun-title">内容管理</div>
-        <div class="meun-item" href="#scho" aria-controls="scho" role="tab" data-toggle="tab" name="floor1"><img
+        <div class="meun-item" href="#scho" aria-controls="scho" role="tab" data-toggle="tab" name="floor1" id="contentManage" onclick="clicked"><img
                 src="images/icon_house_grey.png">内容管理
         </div>
         <div class="meun-item" href="#regu" aria-controls="regu" role="tab" data-toggle="tab" name="floor2"><img
@@ -1165,7 +1165,7 @@
 
 
                 %>
-                <form method="post" action="<%=path %>/contentadd">
+                <form method="post" action="<%=path %>/contentadd" id="formAdd">
                     <input type="hidden" name="code_lingpai" value="<%=code %>">
                 <!--弹出添加用户窗口-->
                 <div class="modal fade" id="addSchool" role="dialog" aria-labelledby="gridSystemModalLabel">
@@ -1211,7 +1211,7 @@
                                             <div class="form-group ">
                                                 <label for="sName" class="col-xs-3 control-label">封面：</label>
 
-                                                <input type="text" class="form-control input-sm duiqi" id="sImg"
+                                                <input type="file" class="form-control input-sm duiqi" id="sImg"
                                                        name="cimg" placeholder="">
 
                                             </div>
@@ -1220,7 +1220,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-xs btn-white" data-dismiss="modal" >取 消</button>
-                                    <button type="submit" class="btn btn-xs btn-green">确 定</button>
+                                    <button type="submit"  class="btn btn-xs btn-green">确 定</button>
                                 </div>
 
                         </div>
@@ -2205,7 +2205,7 @@
                     p = p.substr(0, 10);
                 }
 
-                div.innerHTML += "<div class=\"row\"><div class=\"col-xs-1\" name=\"content_id\">" + id + "</div><div class=\"col-xs-2\">" + h1 + "</div><div class=\"col-xs-1\">" + span + "</div><div class=\"col-xs-1\">" + uploadtime + "</div><div class=\"col-xs-2\">" + p + "</div><div class=\"col-xs-2\">" + img + "<%--<a class=\"linkCcc\">查看</a>--%></div><div class=\"col-xs-2\"><button  class=\"btn btn-success btn-xs\" data-toggle=\"modal\" data-target=\"#reviseSchool\"><a href=\"<%=path %>/contentquery?cid="+ id +"\">修改</a></button><button class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" data-target=\"#deleteSchool\">删除</button></div></div>";
+                div.innerHTML += "<div class=\"row\"><div class=\"col-xs-1\" name=\"content_id\">" + id + "</div><div class=\"col-xs-2\">" + h1 + "</div><div class=\"col-xs-1\">" + span + "</div><div class=\"col-xs-1\">" + uploadtime + "</div><div class=\"col-xs-2\">" + p + "</div><div class=\"col-xs-2\">" + img + "<%--<a class=\"linkCcc\">查看</a>--%></div><div class=\"col-xs-2\"><button  class=\"btn btn-success btn-xs\" data-toggle=\"modal\" data-target=\"#reviseSchool\"><a href=\"<%=path %>/contentquery?cid="+ id +"\">修改</a></button><form method=\"post\" action=\"<%=path %>/contentdel?cid="+ id +" \" id=\"del_btn\" name=\"delcontent\"><button type=\"sumbit\" class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" data-target=\"#deleteSchool\">删除</button></form></div></div>";
                 <%--div.innerHTML += "<div class=\"row\"><div class=\"col-xs-1\" name=\"content_id\">" + id + "</div><div class=\"col-xs-2\">" + h1 + "</div><div class=\"col-xs-1\">" + span + "</div><div class=\"col-xs-1\">" + uploadtime + "</div><div class=\"col-xs-2\">" + p + "</div><div class=\"col-xs-2\">" + img + "&lt;%&ndash;<a class=\"linkCcc\">查看</a>&ndash;%&gt;</div><div class=\"col-xs-2\"><form method=\"post\" action=\"<%=path %>/contentquery?cid="+ id +"\"><button  class=\"btn btn-success btn-xs\" data-toggle=\"modal\" data-target=\"#reviseSchool\">修改</button></form><button class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" data-target=\"#deleteSchool\">删除</button></div></div>";--%>
 
             }
@@ -2215,5 +2215,29 @@
 
 
 </script>
+
+ <%--跳转选项卡--%>
+<%--<script>--%>
+    <%----%>
+
+    <%--function addSubmit(){--%>
+        <%--document.getElementById("formAdd").submit();--%>
+        <%--autoClick();--%>
+    <%--}--%>
+
+    <%--function autoClick() {--%>
+
+        <%--// IE--%>
+        <%--if(document.all) {--%>
+            <%--document.getElementById("contentManage").click();--%>
+        <%--}--%>
+        <%--// 其它浏览器--%>
+        <%--else {--%>
+            <%--var e = document.createEvent("MouseEvents");--%>
+            <%--e.initEvent("click", true, true);--%>
+            <%--document.getElementById("contentManage").dispatchEvent(e);--%>
+        <%--}--%>
+    <%--}--%>
+<%--</script>--%>
 </body>
 </html>

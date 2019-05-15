@@ -27,7 +27,7 @@ public class FourContentDaoImpl implements FourContentDao {
     }
 
     @Override
-    public void addConetn(FourContent content) throws SQLException {
+    public void addContent(FourContent content) throws SQLException {
         QueryRunner runner = new QueryRunner(DSutils.getDataSource());
         String sql = "insert into index_content (h1,span,img,p,uploadtime,a) values (?,?,?,?,?,?);";
         runner.update(sql,  content.getH1(), content.getSpan(),
@@ -42,12 +42,17 @@ public class FourContentDaoImpl implements FourContentDao {
         return runner.query(sql,new BeanHandler<>(FourContent.class),Integer.valueOf(cid));
     }
 
+    public void delContent(FourContent content) throws SQLException {
+        QueryRunner runner = new QueryRunner(DSutils.getDataSource());
+        String sql = "delete from index_content where id = ?";
+        runner.update(sql,content.getId());
+    }
+
 
     @Test
     public void test1() throws Exception {
         FourContentDao dao = new FourContentDaoImpl();
         System.err.println( dao.getContentById("1"));
-
 
     }
 }

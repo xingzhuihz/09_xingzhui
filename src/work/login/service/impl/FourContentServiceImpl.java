@@ -40,11 +40,17 @@ public class FourContentServiceImpl implements FourContentService {
 
     public void addContent(FourContent content) throws Exception {
         FourContentDao dao = new FourContentDaoImpl();
-        dao.addConetn(content);
+        dao.addContent(content);
     }
 
     public FourContent getContentById(String cid) throws Exception{
         FourContentDao dao = new FourContentDaoImpl();
         return  dao.getContentById(cid);
+    }
+
+    @Override
+    public void delContent(FourContent content) throws Exception {
+        FourContentDao dao = new FourContentDaoImpl();
+        dao.delContent(content);
     }
 }

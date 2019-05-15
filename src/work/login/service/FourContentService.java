@@ -18,4 +18,6 @@ public interface FourContentService {
     void addContent(FourContent content) throws Exception;
 
     FourContent getContentById(String cid) throws Exception;
+
+    void delContent(FourContent content) throws Exception;
 }

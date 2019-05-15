@@ -34,6 +34,8 @@ public class ContentAddServlet extends HttpServlet {
         request.getSession().removeAttribute("s_lingpai");
 
 
+
+
         // 比较两个令牌
         if (s_lingpai.equals("") || !s_lingpai.equals(session_lingpai)) {
             request.setAttribute("msg", "重复提交");
