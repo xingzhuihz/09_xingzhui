@@ -2,9 +2,6 @@ package work.login.service;
 
 import work.login.domain.FourContent;
 
-import java.sql.SQLException;
-import java.util.List;
-
 public interface FourContentService {
 
     /**
@@ -17,7 +14,11 @@ public interface FourContentService {
 
     void addContent(FourContent content) throws Exception;
 
-    FourContent getContentById(String cid) throws Exception;
+    String getContentById(String cid) throws Exception;
 
     void delContent(FourContent content) throws Exception;
+
+    String getTitleJsonContent(String title) throws Exception;
+
+    void updateContent(FourContent content) throws Exception;
 }

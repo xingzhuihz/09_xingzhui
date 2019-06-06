@@ -104,7 +104,7 @@
                 let uploadtime = obj.uploadtime;
                 let p = obj.p;
                 if (a.substr(0, 4).match("xxms")) {
-                    div.innerHTML += "<h1>" + h1 + " <span>(" + span + ")</span></h1><div class=\"image_panel\"><img src=\"<%=path %>../" + img + "\" alt=\"CSS Template\" width=\"100\" height=\"150\" /></div><h2>XXXXXXXXXXXXX</h2><ul><li>XXXX<a href=\"#\">XXX</a></li><li>" + uploadtime + "</li><li>Pages: 498</li><li>ISBN 10: 0-496-91612-0 | ISBN 13: 9780492518154</li></ul><p>" + p + "</p><p>XXXXXXXXXXXXXXXXXXXX</p>";
+                    div.innerHTML += "<h1>" + h1 + " <span>(" + span + ")</span></h1><div class=\"image_panel\"><img src=\"<%=path %>../" + img + "\" alt=\"CSS Template\" width=\"100\" height=\"150\" /></div><h2></h2><ul><li><a href=\"#\"></a></li><li>" + uploadtime + "</li><li></li><li></li></ul><p>" + p + "</p><p></p>";
                     div.innerHTML += "<div class=\"cleaner_with_height\">&nbsp;</div>";
 
                 }

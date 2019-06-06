@@ -57,7 +57,7 @@
             let a = obj.a;
             ul.innerHTML += " <li><a href=\"<%=path %>jsps/" + a + "\">" + title + "</a></li>";
         }
-        ul.innerHTML += "<li><a href=\"<%=path %>login.jsp\">登录 </a></li>";
+
         //尾部
 
         let div = document.getElementById("templatemo_footer");

@@ -55,7 +55,6 @@ function displayFiveTitle(json) {
         let a = obj.a;
         ul.innerHTML += " <li><a href=\"<%=path %>" + a + "\">" + title + "</a></li>";
     }
-    ul.innerHTML += "<li><a href=\"../login.jsp\">登录 </a></li>";
     //尾部
     let div = document.getElementById("templatemo_footer");
     div.innerHTML = "";

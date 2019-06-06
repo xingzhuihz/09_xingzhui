@@ -15,4 +15,7 @@ public interface FourContentDao {
 
     void delContent(FourContent content) throws  SQLException;
 
+    List<FourContent> titleContent(String title) throws SQLException;
+
+    void updateContent(FourContent content) throws SQLException;
 }

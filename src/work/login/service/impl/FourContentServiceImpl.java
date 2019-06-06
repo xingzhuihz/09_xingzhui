@@ -35,7 +35,9 @@ public class FourContentServiceImpl implements FourContentService {
 
     @Test
     public void test()throws  Exception {
-        System.err.println(new FourContentServiceImpl().getJsonAllContent());
+
+
+        System.err.println(new FourContentServiceImpl().getContentById("1"));
     }
 
     public void addContent(FourContent content) throws Exception {
@@ -43,14 +45,28 @@ public class FourContentServiceImpl implements FourContentService {
         dao.addContent(content);
     }
 
-    public FourContent getContentById(String cid) throws Exception{
+    public String getContentById(String cid) throws Exception{
         FourContentDao dao = new FourContentDaoImpl();
-        return  dao.getContentById(cid);
+//        return  dao.getContentById(cid);
+        return JSONArray.fromObject(dao.getContentById(cid)).toString();
     }
 
     @Override
     public void delContent(FourContent content) throws Exception {
         FourContentDao dao = new FourContentDaoImpl();
         dao.delContent(content);
+    }
+
+    @Override
+    public String getTitleJsonContent(String title) throws Exception {
+        FourContentDao dao = new FourContentDaoImpl();
+        List<FourContent> list = dao.titleContent(title);
+        return JSONArray.fromObject(list).toString();
+    }
+
+    @Override
+    public void updateContent(FourContent content) throws Exception {
+        FourContentDao dao = new FourContentDaoImpl();
+        dao.updateContent(content);
     }
 }

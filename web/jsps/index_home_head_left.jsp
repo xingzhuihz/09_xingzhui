@@ -6,10 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div id="templatemo_special_offers">
+<div id="templatemo_special_offers" style="color: #91791f;">
     <p>
-        <span>tel:100000</span> XXX
-        XXXX
+        <span>信息通知：</span> 今日无
+        <%--XXXX--%>
     </p>
-    <a href="#" style="margin-left: 50px;">Read more...</a>
+    <a href="#" style="margin-left: 50px;color: #91791f;">更  多...</a>
 </div>

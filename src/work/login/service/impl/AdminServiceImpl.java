@@ -17,6 +17,7 @@ public class AdminServiceImpl implements AdminService {
         admin.setPassword(pwd);
         return dao.login(admin);
     }
+
     @Test
     public void test1() throws Exception {
 
