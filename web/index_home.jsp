@@ -111,7 +111,15 @@
                 if (32 < p.length) {
                     p = p.substr(0, 32);
                 }
-                div.innerHTML += " <div class=\"templatemo_product_box\"><h1>" + h1 + "<span>(" + span + ")</span></h1><img src=\"<%=path %>" + img + "\" alt=\"image\" /><div class=\"product_info\"><p>" + p + "</p><h3>" + uploadtime + "</h3><div class=\"buy_now_button\"><a href=\"<%=path %>jsps/" + a + "\">查看</a></div></div><div class=\"cleaner\">&nbsp;</div></div>";
+                if (img == "") {
+                    div.innerHTML += " <div class=\"templatemo_product_box\"><h1>" + h1 + "<span>(" + span + ")</span></h1><div class=\"product_info\"><p style=\"margin-left:70px\">" + p + "</p><h3 style=\"margin-left:70px\">" + uploadtime + "</h3><div class=\"buy_now_button\"><a style=\"margin-left:70px\" href=\"<%=path %>jsps/" + a + "\">查看</a></div></div><div class=\"cleaner\">&nbsp;</div></div>";
+
+                } else {
+                    div.innerHTML += " <div class=\"templatemo_product_box\"><h1>" + h1 + "<span>(" + span + ")</span></h1><img src=\"<%=path %>" + img + "\" alt=\"image\" style=\"width:100px!important;height:150px!important;\" /><div class=\"product_info\"><p>" + p + "</p><h3>" + uploadtime + "</h3><div class=\"buy_now_button\"><a href=\"<%=path %>jsps/" + a + "\">查看</a></div></div><div class=\"cleaner\">&nbsp;</div></div>";
+
+                }
+
+
                 if (i % 2 == 0) {
                     div.innerHTML += "<div class=\"cleaner_with_width\">&nbsp;</div>";
                 } else if (i % 2 == 1) {

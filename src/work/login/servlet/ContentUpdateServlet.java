@@ -111,7 +111,7 @@ public class ContentUpdateServlet extends HttpServlet {
 
             content.setSpan(map.get("uAurthor"));
 
-            content.setUploadtime(map.get("uUploadtime"));
+            content.setA(map.get("uFL"));
 
 
             new FourContentServiceImpl().updateContent(content);

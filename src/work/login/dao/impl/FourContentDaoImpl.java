@@ -59,8 +59,8 @@ public class FourContentDaoImpl implements FourContentDao {
     @Override
     public void updateContent(FourContent content) throws SQLException {
         QueryRunner runner = new QueryRunner(DSutils.getDataSource());
-        String sql = "update index_content set h1 = ?,span = ?,p = ?,uploadtime = ?,img = ? where id = ?";
-        runner.update(sql, content.getH1(), content.getSpan(), content.getP(), content.getUploadtime(),content.getImg(), content.getId());
+        String sql = "update index_content set h1 = ?,span = ?,p = ?,img = ?,a = ?  where id = ?";
+        runner.update(sql, content.getH1(), content.getSpan(), content.getP(),content.getImg(),content.getA(), content.getId());
     }
 
 

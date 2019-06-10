@@ -81,7 +81,8 @@
             </p>
         </div>
         <div class="meun-title">账号管理</div>
-        <div class="meun-item meun-item-active" href="#sour" aria-controls="sour" role="tab" data-toggle="tab" id="contentFirst"><img
+        <div class="meun-item meun-item-active" href="#sour" aria-controls="sour" role="tab" data-toggle="tab"
+             id="contentFirst"><img
                 src="images/icon_source.png">资源管理
         </div>
         <div class="meun-item" href="#char" aria-controls="char" role="tab" data-toggle="tab"><img
@@ -376,7 +377,8 @@
                                         <div class="form-group ">
                                             <label for="sName" class="col-xs-3 control-label">名称：</label>
                                             <div class="col-xs-8 ">
-                                                <input type="text" class="form-control input-sm duiqi" id="sName" value=""
+                                                <input type="text" class="form-control input-sm duiqi" id="sName"
+                                                       value=""
                                                        placeholder="">
 
 
@@ -392,7 +394,8 @@
                                         <div class="form-group">
                                             <label for="sOrd" class="col-xs-3 control-label">文件：</label>
                                             <div class="col-xs-8">
-                                                <input type="file" class="form-control input-sm duiqi" id="sOrd" name="addFile"
+                                                <input type="file" class="form-control input-sm duiqi" id="sOrd"
+                                                       name="addFile"
                                                        placeholder="">
                                             </div>
                                         </div>
@@ -1060,7 +1063,9 @@
 
                 <div class="check-div form-inline">
                     <div class="col-xs-3">
-                        <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addSchool">添加内容</button>
+                        <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addSchool"
+                                onclick="addSelect();">添加内容
+                        </button>
                     </div>
                     <div class="col-lg-4 col-xs-5">
                         <input type="text" class=" form-control input-sm " placeholder="输入文字搜索">
@@ -1204,12 +1209,23 @@
                                                        name="cauthor" placeholder="">
 
                                             </div>
-                                            <div class="form-group ">
-                                                <label for="sName" class="col-xs-3 control-label">时间：</label>
+                                            <div class="form-group " id="fl">
+                                                <%--<label for="sName" class="col-xs-3 control-label">分类：</label>--%>
 
-                                                <input type="text" class="form-control input-sm duiqi" id="sUploadTime"
-                                                       style="width: 500px!important"
-                                                       name="cuploadtime" placeholder="2019-5-7">
+                                                <%--<select class="form-control input-sm duiqi" id="sFL" name="sFL" style="width: 105px!important;" >--%>
+
+                                                <%--<option value="">--请选择--</option>--%>
+                                                <%--<option value="1" name="1"> 乡土文化</option>--%>
+                                                <%--<option value="2" name="2"> 乡土经济</option>--%>
+                                                <%--<option value="3" name="3"> 乡贤名士</option>--%>
+                                                <%--<option value="4" name="4"> 乡土习俗</option>--%>
+                                                <%--<option value="5" name="5"> 文化遗产</option>--%>
+
+
+                                                <%--</select>--%>
+                                                <%--<input type="text" class="form-control input-sm duiqi" id="sUploadTime"--%>
+                                                <%--style="width: 500px!important"--%>
+                                                <%--name="cuploadtime" placeholder="2019-5-7">--%>
 
                                             </div>
                                             <div class="form-group ">
@@ -1253,7 +1269,7 @@
                 <%--%>--%>
                 <!--弹出修改文章窗口-->
                 <form method="post" action="<%=path %>/contentupdate" enctype="multipart/form-data">
-                    <div id="uId"> </div>
+                    <div id="uId"></div>
 
                     <div class="modal fade" id="reviseSchool" role="dialog" aria-labelledby="gridSystemModalLabel">
                         <div class="modal-dialog" role="document" style="width:1000px;height: 700px;">
@@ -1266,46 +1282,47 @@
                                 <div class="modal-body" style="height:560px;">
                                     <div class="container-fluid">
                                         <form class="form-horizontal">
-                                            <div class="form-group "  id="titleGroup">
+                                            <div class="form-group " id="titleGroup">
                                                 <%--<label for="sName" class="col-xs-3 control-label">主题：</label>--%>
 
                                                 <%--<input type="email" class="form-control input-sm duiqi" id="uTitle"--%>
-                                                       <%--value="${c_id.h1}" style="width: 500px!important"--%>
-                                                       <%--placeholder="">--%>
+                                                <%--value="${c_id.h1}" style="width: 500px!important"--%>
+                                                <%--placeholder="">--%>
 
                                             </div>
                                             <div class="form-group " id="aurthorGroup">
                                                 <%--<label for="sName" class="col-xs-3 control-label">作者：</label>--%>
 
                                                 <%--<input type="email" class="form-control input-sm duiqi" id="uAuthor"--%>
-                                                       <%--value="${c_id.span}" style="width: 500px!important"--%>
-                                                       <%--placeholder="">--%>
+                                                <%--value="${c_id.span}" style="width: 500px!important"--%>
+                                                <%--placeholder="">--%>
 
                                             </div>
-                                            <div class="form-group" id="uploadtimeGroup">
+                                            <div class="form-group" id="flGroup">
                                                 <%--<label for="sLink" class="col-xs-3 control-label">时间：</label>--%>
 
                                                 <%--<input type="" class="form-control input-sm duiqi" id="uUploadtime"--%>
-                                                       <%--value="${c_id.uploadtime}" style="width: 500px!important"--%>
-                                                       <%--placeholder="">--%>
+                                                <%--value="${c_id.uploadtime}" style="width: 500px!important"--%>
+                                                <%--placeholder="">--%>
 
                                             </div>
+
                                             <div class="form-group" id="contentGroup">
                                                 <%--<label for="sOrd" class="col-xs-3 control-label">内容：</label>--%>
 
                                                 <%--&lt;%&ndash;<input type="" class="form-control input-sm duiqi" id="sOrd" value="${c_id.p}"&ndash;%&gt;--%>
                                                 <%--&lt;%&ndash;placeholder="">&ndash;%&gt;--%>
                                                 <%--<textarea class="form-control input-sm duiqi" id="uContent"--%>
-                                                          <%--name="ccontent" placeholder="" value="${c_id.p}"--%>
-                                                          <%--style="height: 100px;width: 500px!important"></textarea>--%>
+                                                <%--name="ccontent" placeholder="" value="${c_id.p}"--%>
+                                                <%--style="height: 100px;width: 500px!important"></textarea>--%>
 
                                             </div>
                                             <div class="form-group" id="imgGroup">
                                                 <%--<label for="sOrd" class="col-xs-3 control-label">封面：</label>--%>
 
                                                 <%--<img src="<%=path%>${c_id.img}/"--%>
-                                                     <%--class="form-control input-sm duiqi" id="uImg"--%>
-                                                     <%--style="width: 200px;height: 200px; ">--%>
+                                                <%--class="form-control input-sm duiqi" id="uImg"--%>
+                                                <%--style="width: 200px;height: 200px; ">--%>
                                                 <%--<input type="file" class="form-control input-sm duiqi" id="uImg" value="${c_id.img}"--%>
                                                 <%--placeholder="">--%>
 
@@ -1326,27 +1343,27 @@
                 </form>
                 <!--弹出删除用户警告窗口-->
                 <%--<div class="modal fade" id="deleteSchool" role="dialog" aria-labelledby="gridSystemModalLabel">--%>
-                    <%--<div class="modal-dialog" role="document">--%>
-                        <%--<div class="modal-content">--%>
-                            <%--<div class="modal-header">--%>
-                                <%--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span--%>
-                                        <%--aria-hidden="true">&times;</span></button>--%>
-                                <%--<h4 class="modal-title" id="gridSystemModalLabel">提示</h4>--%>
-                            <%--</div>--%>
-                            <%--<div class="modal-body">--%>
-                                <%--<div class="container-fluid">--%>
-                                    <%--确定要删除该内容？删除后不可恢复！--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                            <%--<div class="modal-footer">--%>
-                                <%--<button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>--%>
-                                <%--<button type="button" class="btn btn-xs btn-danger" onclick="deleteContent()">确 认--%>
-                                <%--</button>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<!-- /.modal-content -->--%>
-                    <%--</div>--%>
-                    <%--<!-- /.modal-dialog -->--%>
+                <%--<div class="modal-dialog" role="document">--%>
+                <%--<div class="modal-content">--%>
+                <%--<div class="modal-header">--%>
+                <%--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span--%>
+                <%--aria-hidden="true">&times;</span></button>--%>
+                <%--<h4 class="modal-title" id="gridSystemModalLabel">提示</h4>--%>
+                <%--</div>--%>
+                <%--<div class="modal-body">--%>
+                <%--<div class="container-fluid">--%>
+                <%--确定要删除该内容？删除后不可恢复！--%>
+                <%--</div>--%>
+                <%--</div>--%>
+                <%--<div class="modal-footer">--%>
+                <%--<button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>--%>
+                <%--<button type="button" class="btn btn-xs btn-danger" onclick="deleteContent()">确 认--%>
+                <%--</button>--%>
+                <%--</div>--%>
+                <%--</div>--%>
+                <%--<!-- /.modal-content -->--%>
+                <%--</div>--%>
+                <%--<!-- /.modal-dialog -->--%>
                 <%--</div>--%>
                 <!-- /.modal -->
 
@@ -2176,7 +2193,7 @@
     huadong('.slider-minmax6', "天", "8", 10);
 </script>
 
-  <%--初始化后台页面数据--%>
+<%--初始化后台页面数据--%>
 <script>
 
 
@@ -2185,6 +2202,7 @@
         autoClick()
         //创建异步对象
         let allContent;
+
         if (window.XMLHttpRequest) {
 
             allContent = new XMLHttpRequest();
@@ -2202,7 +2220,6 @@
 
         //内容
         allContent.open("GET", "<%=path %>/index?method=allContent", true);
-
 
         //显示内容
         allContent.onreadystatechange = function () {
@@ -2241,7 +2258,12 @@
                     p = p.substr(0, 10);
                 }
 
-                div.innerHTML += "<div class=\"row\"><div class=\"col-xs-1\" name=\"content_id\">" + id + "</div><div class=\"col-xs-2\">" + h1 + "</div><div class=\"col-xs-1\">" + span + "</div><div class=\"col-xs-1\">" + uploadtime + "</div><div class=\"col-xs-2\">" + p + "</div><div class=\"col-xs-2\"><img  src=\"<%=path%>/"+ img +"\" style=\"width:42px!important;height:63px!important;margin-top:3px;\"  /></div><div class=\"col-xs-2\"><button  class=\"btn btn-success btn-xs\" data-toggle=\"modal\" data-target=\"#reviseSchool\" style=\"margin-top:10px \" onclick=\"idQuery("+ id +");\" >修改</button><form method=\"post\" action=\"<%=path %>/contentdel?cid=" + id + " \" id=\"del_btn\" name=\"delcontent\"><button type=\"sumbit\" class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" data-target=\"#deleteSchool\">删除</button></form></div></div>";
+                if (img == "") {
+                    div.innerHTML += "<div class=\"row\"><div class=\"col-xs-1\" name=\"content_id\">" + id + "</div><div class=\"col-xs-2\">" + h1 + "</div><div class=\"col-xs-1\">" + span + "</div><div class=\"col-xs-1\">" + uploadtime + "</div><div class=\"col-xs-2\">" + p + "</div><div class=\"col-xs-2\"></div><div class=\"col-xs-2\"><button  class=\"btn btn-success btn-xs\" data-toggle=\"modal\" data-target=\"#reviseSchool\" style=\"margin-top:10px \" onclick=\"idQuery(" + id + ");\" >修改</button><form method=\"post\" action=\"<%=path %>/contentdel?cid=" + id + " \" id=\"del_btn\" name=\"delcontent\"><button type=\"sumbit\" class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" data-target=\"#deleteSchool\">删除</button></form></div></div>";
+                } else {
+                    div.innerHTML += "<div class=\"row\"><div class=\"col-xs-1\" name=\"content_id\">" + id + "</div><div class=\"col-xs-2\">" + h1 + "</div><div class=\"col-xs-1\">" + span + "</div><div class=\"col-xs-1\">" + uploadtime + "</div><div class=\"col-xs-2\">" + p + "</div><div class=\"col-xs-2\"><img  src=\"<%=path%>/" + img + "\" style=\"width:42px!important;height:63px!important;margin-top:3px;\"  /></div><div class=\"col-xs-2\"><button  class=\"btn btn-success btn-xs\" data-toggle=\"modal\" data-target=\"#reviseSchool\" style=\"margin-top:10px \" onclick=\"idQuery(" + id + ");\" >修改</button><form method=\"post\" action=\"<%=path %>/contentdel?cid=" + id + " \" id=\"del_btn\" name=\"delcontent\"><button type=\"sumbit\" class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" data-target=\"#deleteSchool\">删除</button></form></div></div>";
+                      }
+
 
             }
 
@@ -2265,13 +2287,16 @@
 
 </script>
 
-  <%--修改--%>
+<%--修改--%>
 <script>
     function idQuery(id) {
+
         let idContent;
+
         if (window.XMLHttpRequest) {
 
             idContent = new XMLHttpRequest();
+
         } else {
             try {
 
@@ -2280,12 +2305,13 @@
             } catch (e) {
 
                 idContent = new ActiveXObject("Microsoft.XMLHTTP");
+
             }
         }
 
 
         //内容
-        idContent.open("GET", "<%=path %>/contentquery?cid="+ id +"", true);
+        idContent.open("GET", "<%=path %>/contentquery?cid=" + id + "", true);
 
 
         //显示内容
@@ -2304,13 +2330,12 @@
 
         };
         idContent.send();
+
         function displayIdContent(json) {
             let titleGroup = document.getElementById("titleGroup");
             titleGroup.innerHTML = "";
             let aurthorGroup = document.getElementById("aurthorGroup");
             aurthorGroup.innerHTML = "";
-            let uploadtimeGroup = document.getElementById("uploadtimeGroup");
-            uploadtimeGroup.innerHTML = "";
             let contentGroup = document.getElementById("contentGroup");
             contentGroup.innerHTML = "";
             let imgGroup = document.getElementById("imgGroup");
@@ -2319,33 +2344,172 @@
             let idHid = document.getElementById("uId");
             idHid.innerHTML = "";
 
+            let obj = json[0];
+            let id = obj.id;
+            let h1 = obj.h1;
+            let span = obj.span;
+            let img = obj.img;
+            let a = obj.a;
+            let p = obj.p;
+
+            titleGroup.innerHTML += "<label for=\"sName\" class=\"col-xs-3 control-label\">主题：</label><input type=\"text\" name=\"uTitle\" class=\"form-control input-sm duiqi\" id=\"uTitle\"value=\"" + h1 + "\" style=\"width: 500px!important\" placeholder=\"\">";
+            aurthorGroup.innerHTML += "<label for=\"sName\" class=\"col-xs-3 control-label\">作者：</label><input type=\"text\" name=\"uAurthor\" class=\"form-control input-sm duiqi\" id=\"uAuthor\"value=\"" + span + "\" style=\"width: 500px!important\" placeholder=\"\">";
+            contentGroup.innerHTML += "<label for=\"sOrd\" class=\"col-xs-3 control-label\">内容：</label><textarea name=\"uContent\" class=\"form-control input-sm duiqi\" id=\"uContent\"name=\"ccontent\" placeholder=\"\"style=\"height: 100px;width: 500px!important\">" + p + "</textarea>";
+
+            if (img == "") {
+                imgGroup.innerHTML += "<label for=\"sOrd\" class=\"col-xs-3 control-label\">封面：</label><input type=\"file\" class=\"form-control input-sm duiqi\" id=\"uImg\" name=\"uImg\" placeholder=\"\">";
+            } else {
+                imgGroup.innerHTML += "<label for=\"sOrd\" class=\"col-xs-3 control-label\">封面：</label><img src=\"<%=path %>/" + img + "\" class=\"form-control input-sm duiqi\" id=\"qImg\" style=\"width: 200px;height: 200px;float:left;margin-left:1px!important\"><input style=\"float: left;margin-left:80px!important\" type=\"file\" class=\"form-control input-sm duiqi\" id=\"uImg\"name=\"uImg\" placeholder=\"\">";
+            }
+            
+
+
+
+            idHid.innerHTML += " <input type=\"hidden\" name=\"uId\" id=\"uId\" value=\"" + id + "\"><input type=\"hidden\" value=\"" + img + "\" name=\"oldimg\">";
+
+
+
+            updateSelect(a);
+
+        }
+
+
+    }
+
+
+    function updateSelect(flSelect) {
+        //创建异步对象
+        let flContent;
+        if (window.XMLHttpRequest) {
+            flContent = new XMLHttpRequest();
+        } else {
+            try {
+                flContent = new ActiveXObject("Msxm12.XMLHTTP");
+            } catch (e) {
+                flContent = new ActiveXObject("Microsoft.XMLHTTP");
+
+            }
+        }
+
+        // 下拉框
+        flContent.open("GET", "<%=path %>/index?method=fiveTitle", true);
+
+        // 下拉框
+        flContent.onreadystatechange = function () {
+            if (4 == flContent.readyState) {
+                if (200 == flContent.status) {
+                    let result = flContent.responseText;
+                    // typeof显示数据类型
+                    //类型转换 object
+                    result = JSON.parse(result);
+                    // alert(result);
+                    displayUFLContent(result);
+
+                }
+            }
+        };
+        flContent.send();
+
+        function displayUFLContent(json) {
+            let fl = document.getElementById("flGroup");
+            fl.innerHTML = "";
+
             let len = json.length;
+            var p = "<label for=\"sName\" class=\"col-xs-3 control-label\">分类：</label><select class=\"form-control input-sm duiqi\" id=\"uFL\" name=\"uFL\" style=\"width: 105px!important;\">";
 
             for (let i = 0; i < len; i++) {
 
                 let obj = json[i];
                 let id = obj.id;
-                let h1 = obj.h1;
-                let span = obj.span;
-                let img = obj.img;
+                let title = obj.title;
                 let a = obj.a;
-                let uploadtime = obj.uploadtime;
-                let p = obj.p;
-
-                titleGroup.innerHTML +="<label for=\"sName\" class=\"col-xs-3 control-label\">主题：</label><input type=\"text\" name=\"uTitle\" class=\"form-control input-sm duiqi\" id=\"uTitle\"value=\""+ h1 +"\" style=\"width: 500px!important\" placeholder=\"\">";
-                aurthorGroup.innerHTML +="<label for=\"sName\" class=\"col-xs-3 control-label\">作者：</label><input type=\"text\" name=\"uAurthor\" class=\"form-control input-sm duiqi\" id=\"uAuthor\"value=\""+ span +"\" style=\"width: 500px!important\" placeholder=\"\">";
-                uploadtimeGroup.innerHTML +="<label for=\"sLink\" class=\"col-xs-3 control-label\">时间：</label><input type=\"text\" name=\"uUploadtime\" class=\"form-control input-sm duiqi\" id=\"uUploadtime\"value=\""+ uploadtime +"\" style=\"width: 500px!important\" placeholder=\"\">";
-                contentGroup.innerHTML +="<label for=\"sOrd\" class=\"col-xs-3 control-label\">内容：</label><textarea name=\"uContent\" class=\"form-control input-sm duiqi\" id=\"uContent\"name=\"ccontent\" placeholder=\"\"style=\"height: 100px;width: 500px!important\">"+ p +"</textarea>";
-                imgGroup.innerHTML +="<label for=\"sOrd\" class=\"col-xs-3 control-label\">封面：</label><img src=\"<%=path%>/"+ img +"\" class=\"form-control input-sm duiqi\" id=\"qImg\"style=\"width: 200px;height: 200px;float:left;margin-left:1px!important\"><input style=\"float: left;margin-left:80px!important\" type=\"file\" class=\"form-control input-sm duiqi\" id=\"uImg\"name=\"uImg\" placeholder=\"\">";
-                idHid.innerHTML += " <input type=\"hidden\" name=\"uId\" id=\"uId\" value=\""+ id +"\"><input type=\"hidden\" value=\""+ img +"\" name=\"oldimg\">";
-
-
+                if (flSelect.match(a)) {
+                    p += "<option value=\"" + a + "\" name=\"" + id + "\" selected>" + title + "</option>";
+                } else {
+                    p += "<option value=\"" + a + "\" name=\"" + id + "\">" + title + "</option>";
+                }
             }
-
+            p += "</select>"
+            fl.innerHTML += p;
         }
-
     }
 
 </script>
+<%--add下拉框--%>
+<script>
+
+    function addSelect() {
+        //创建异步对象
+
+        let flContent;
+        if (window.XMLHttpRequest) {
+            flContent = new XMLHttpRequest();
+
+        } else {
+            try {
+                flContent = new ActiveXObject("Msxm12.XMLHTTP");
+
+
+            } catch (e) {
+                flContent = new ActiveXObject("Microsoft.XMLHTTP");
+
+            }
+        }
+
+
+        // 下拉框
+        flContent.open("GET", "<%=path %>/index?method=fiveTitle", true);
+
+        // 下拉框
+        flContent.onreadystatechange = function () {
+            if (4 == flContent.readyState) {
+                if (200 == flContent.status) {
+                    let result = flContent.responseText;
+                    // typeof显示数据类型
+                    //类型转换 object
+                    result = JSON.parse(result);
+                    // alert(result);
+                    displayFLContent(result);
+
+                }
+            }
+
+        };
+        flContent.send();
+
+        function displayFLContent(json) {
+            let fl = document.getElementById("fl");
+            fl.innerHTML = "";
+
+
+            let len = json.length;
+            var p = "<label for=\"sName\" class=\"col-xs-3 control-label\">分类：</label><select class=\"form-control input-sm duiqi\" id=\"sFL\" name=\"sFL\" style=\"width: 105px!important;\"><option value=\"\">--请选择--</option>";
+
+
+            for (let i = 0; i < len; i++) {
+
+                let obj = json[i];
+                let id = obj.id;
+                let title = obj.title;
+                let a = obj.a;
+                p += "<option value=\"" + a + "\" name=\"" + id + "\">" + title + "</option>";
+
+
+                // <option value="2" name="2"> 乡土经济</option>
+                // <option value="3" name="3"> 乡贤名士</option>
+                // <option value="4" name="4"> 乡土习俗</option>
+                // <option value="5" name="5"> 文化遗产</option>
+
+
+            }
+            p += "</select>"
+            fl.innerHTML += p;
+
+        }
+    }
+
+
+</script>
+
 </body>
 </html>

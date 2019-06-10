@@ -104,7 +104,11 @@
                 let uploadtime = obj.uploadtime;
                 let p = obj.p;
                 if (a.substr(0, 4).match("xxms")) {
-                    div.innerHTML += "<h1>" + h1 + " <span>(" + span + ")</span></h1><div class=\"image_panel\"><img src=\"<%=path %>../" + img + "\" alt=\"CSS Template\" width=\"100\" height=\"150\" /></div><h2></h2><ul><li><a href=\"#\"></a></li><li>" + uploadtime + "</li><li></li><li></li></ul><p>" + p + "</p><p></p>";
+                    if (img == "") {
+                        div.innerHTML += "<h1>" + h1 + " <span>(" + span + ")</span></h1><div class=\"image_panel\"></div><h2></h2><ul><li><a href=\"#\"></a></li><li>" + uploadtime + "</li><li></li><li></li></ul><p>" + p + "</p><p></p>";
+                    } else {
+                        div.innerHTML += "<h1>" + h1 + " <span>(" + span + ")</span></h1><div class=\"image_panel\"><img src=\"<%=path %>../" + img + "\" alt=\"CSS Template\" width=\"100\" height=\"150\" /></div><h2></h2><ul><li><a href=\"#\"></a></li><li>" + uploadtime + "</li><li></li><li></li></ul><p>" + p + "</p><p></p>";
+                    }
                     div.innerHTML += "<div class=\"cleaner_with_height\">&nbsp;</div>";
 
                 }

@@ -38,8 +38,6 @@ public class ContentAddServlet extends HttpServlet {
         request.getSession().removeAttribute("s_lingpai");
 
 
-
-
         FourContent content = new FourContent();
 
 
@@ -67,7 +65,7 @@ public class ContentAddServlet extends HttpServlet {
                     String value = item.getString("UTF-8");
 
                     map.put(name, value);
-                   String s_lingpai = map.get("code_lingpai");
+                    String s_lingpai = map.get("code_lingpai");
                     // 比较两个令牌
                     if (s_lingpai.equals("") || !s_lingpai.equals(session_lingpai)) {
                         request.setAttribute("msg", "重复提交");
@@ -77,38 +75,42 @@ public class ContentAddServlet extends HttpServlet {
 
                 } else {// 如果是文件
                     String root = getServletContext().getRealPath("/images/content/");
+                    if (item.getName().equals("")) {
+                        content.setImg("");
+                    } else {
+                        // 得到文件保存路径
+                        String fileName = item.getName();
 
-                    // 得到文件保存路径
-                    String fileName = item.getName();
+                        // 处理文件名的绝对路径
+                        int index = fileName.lastIndexOf("\\");
 
-                    // 处理文件名的绝对路径
-                    int index = fileName.lastIndexOf("\\");
+                        if (index != -1) {
+                            fileName = fileName.substring(index + 1);
+                        }
 
-                    if (index != -1) {
-                        fileName = fileName.substring(index + 1);
+                        // 给文件名称添加UUID前缀，处理文件同名问题
+                        String saveName = UUID.randomUUID().toString().toUpperCase() + "-" + fileName;
+
+                        File dirFile = new File(root, "");
+
+
+                        //创建目标链
+                        dirFile.mkdirs();
+
+
+                        // 创建目标文件
+                        File destFile = new File(dirFile, saveName);
+
+                        // 保存
+                        item.write(destFile);
+
+
+                        String img = destFile.toString().substring(destFile.toString().indexOf("content") + 8);
+
+                        map.put("cimg", "images/content/" + img);
+
+
                     }
-
-                    // 给文件名称添加UUID前缀，处理文件同名问题
-                    String saveName = UUID.randomUUID().toString().toUpperCase() + "-" + fileName;
-
-                    File dirFile = new File(root, "");
-
-
-                    //创建目标链
-                    dirFile.mkdirs();
-
-
-                    // 创建目标文件
-                    File destFile = new File(dirFile, saveName);
-
-                    // 保存
-                    item.write(destFile);
-
-
-                    String img = destFile.toString().substring(destFile.toString().indexOf("content")+8);
-
-                    map.put("cimg", "images/content/"+img);
-
 
                 }
 
@@ -121,17 +123,16 @@ public class ContentAddServlet extends HttpServlet {
             content.setP(map.get("ctitle"));
 
             content.setSpan(map.get("cauthor"));
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-M-dd");// 设置日期格式
+            String date = df.format(new Date());
+            content.setUploadtime(date);
+//            content.setUploadtime(map.get("cuploadtime"));
 
-            content.setUploadtime(map.get("cuploadtime"));
-
-            content.setA("xtwh.jsp");
-
-
-
-
-
-
-
+            if (map.get("sFL").equals("")) {
+                content.setA("xtwh.jsp");
+            } else {
+                content.setA(map.get("sFL"));
+            }
 
 
 //            BeanUtils.populate(content, request.getParameterMap());
