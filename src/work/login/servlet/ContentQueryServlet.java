@@ -24,14 +24,21 @@ public class ContentQueryServlet extends HttpServlet {
 
         // 调用service 通过id获取内容 返回content
         FourContent content = null;
-        if (request.getParameter("cid").equals("")) {
+
+        if (null == request.getParameter("cid")) {
             //如果是title
             String title = request.getParameter("title");
             titleContent(request, response, title);
+
         } else {
             // 获取内容id
             String cid = request.getParameter("cid");
             cidContent(request,response,cid);
+        }
+
+
+
+
 //            try {
 //                content = new FourContentServiceImpl().getContentById(cid);
 //            } catch (Exception e) {
@@ -41,7 +48,7 @@ public class ContentQueryServlet extends HttpServlet {
 //            request.setAttribute("c_id", content);
 //
 //            request.getRequestDispatcher("/index_manage.jsp").forward(request, response);
-        }
+
 
 
         // session 域
