@@ -12,7 +12,9 @@ public class PasswordUtils {
 
     public static void main(String[] args){
         String pwd = PasswordUtils.md5("1234","admin");
-        System.err.println(pwd);
+
+        String pwd1 = PasswordUtils.md5("1111", "nsh");
+        System.err.println(pwd1);
 
 
     }

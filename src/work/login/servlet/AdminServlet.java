@@ -121,6 +121,8 @@ public class AdminServlet extends HttpServlet {
             } else {
                 System.out.println("登陆成功：" + admin);
                 response.getWriter().print("<span style='color:green'>登陆成功</span>");
+                request.getSession().setAttribute("name", name);
+                request.setAttribute("name", name);
                 request.getRequestDispatcher("/index_manage.jsp").forward(request, response);
                 // 跳去后台管理主界面
 
@@ -153,8 +155,14 @@ public class AdminServlet extends HttpServlet {
                 response.getWriter().print("0");
             } else {
                 System.out.println("Android端 登陆成功：" + admin);
-                // 成功输出 1
-                response.getWriter().print("1");
+                if (admin.getLimits().equals(1)) {
+                    // 成功输出 1 管理员
+                    response.getWriter().print("1");
+                } else {
+                    // 成功输出 2
+                    response.getWriter().print("2");
+                }
+
             }
         } catch (Exception e) {
             e.printStackTrace();

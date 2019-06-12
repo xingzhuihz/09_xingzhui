@@ -73,11 +73,17 @@
         <div id="logoDiv">
             <p id="logoP"><img id="logo" alt="左右结构项目" src="images/logo.png"><span>后台管理</span></p>
         </div>
+
+        <%
+
+            String name = (String) session.getAttribute("name");
+
+        %>
         <div id="personInfor">
-            <p id="userName">星骓</p>
-            <p><span>XZ@qq.com</span></p>
+            <p id="userName"><%=name %></p>
+            <p><span>管理员</span></p>
             <p>
-                <a href="index_home.jsp">退出登录 </a>
+                <a href="<%=path %>/index_home.jsp">退出登录 </a>
             </p>
         </div>
         <div class="meun-title">账号管理</div>
@@ -2199,7 +2205,7 @@
 
     window.onload = function () {
         // 自动跳转页面
-        autoClick()
+        autoClick();
         //创建异步对象
         let allContent;
 

@@ -27,8 +27,28 @@ public class ContentAddServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 设置响应头
+        response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
 
+        String method = request.getParameter("method");
+
+        if (method == null || "".equals(method)) {
+            // web页的添加: 没有参数null,或者参数值为""
+            addPage(request, response);
+        } else if ("addPage".equals(method)) {
+            // Android 端的添加
+            try {
+                addPageA(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
+    private void addPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 获取session中令牌和提交过来的令牌
 //        String s_lingpai = request.getParameter("code_lingpai");
         String session_lingpai = (String) request.getSession().getAttribute("s_lingpai");
@@ -50,9 +70,7 @@ public class ContentAddServlet extends HttpServlet {
 
         upload.setHeaderEncoding("UTF-8");
 
-
         try {
-
             List<FileItem> fileItemList = upload.parseRequest(request);
 
             Map<String, String> map = new HashMap<>();
@@ -120,7 +138,7 @@ public class ContentAddServlet extends HttpServlet {
 
             content.setImg(map.get("cimg"));
 
-            content.setP(map.get("ctitle"));
+            content.setP(map.get("ccontent"));
 
             content.setSpan(map.get("cauthor"));
             SimpleDateFormat df = new SimpleDateFormat("yyyy-M-dd");// 设置日期格式
@@ -164,4 +182,125 @@ public class ContentAddServlet extends HttpServlet {
 
     }
 
+    private void addPageA(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+
+        FourContent content = new FourContent();
+
+
+        // 创建DiskFileItemFactory工厂
+        DiskFileItemFactory factory = new DiskFileItemFactory();
+
+        // 创建一个文件上传解析器
+        ServletFileUpload upload = new ServletFileUpload(factory);
+
+
+        upload.setHeaderEncoding("UTF-8");
+
+        try {
+            List<FileItem> fileItemList = upload.parseRequest(request);
+
+            Map<String, String> map = new HashMap<>();
+
+            for (FileItem item : fileItemList) {
+                // 如果fileitem中封装的是普通输入项的数据
+                if (item.isFormField()) {
+                    String name = item.getFieldName();
+
+                    String value = item.getString("UTF-8");
+
+                    map.put(name, value);
+
+                } else {// 如果是文件
+                    String root = getServletContext().getRealPath("/images/content/");
+                    if (item.getName().equals("")) {
+                        content.setImg("");
+                    } else {
+                        // 得到文件保存路径
+                        String fileName = item.getName();
+
+                        // 处理文件名的绝对路径
+                        int index = fileName.lastIndexOf("\\");
+
+                        if (index != -1) {
+                            fileName = fileName.substring(index + 1);
+                        }
+
+                        // 给文件名称添加UUID前缀，处理文件同名问题
+                        String saveName = UUID.randomUUID().toString().toUpperCase() + "-" + fileName;
+
+                        File dirFile = new File(root, "");
+
+
+                        //创建目标链
+                        dirFile.mkdirs();
+
+
+                        // 创建目标文件
+                        File destFile = new File(dirFile, saveName);
+
+                        // 保存
+                        item.write(destFile);
+
+
+                        String img = destFile.toString().substring(destFile.toString().indexOf("content") + 8);
+
+                        map.put("img", "images/content/" + img);
+
+
+                    }
+
+                }
+
+            }
+
+            content.setH1(map.get("title"));
+
+            content.setImg(map.get("img"));
+
+            content.setP(map.get("content"));
+
+            content.setSpan(map.get("author"));
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-M-dd");// 设置日期格式
+            String date = df.format(new Date());
+            content.setUploadtime(date);
+//            content.setUploadtime(map.get("cuploadtime"));
+
+
+            content.setA(map.get("type"));
+
+
+            new FourContentServiceImpl().addContent(content);
+
+            response.getWriter().print("success");
+        } catch (Exception e) {
+
+        }
+
+//        FourContent content = new FourContent();
+//
+//        try {
+//
+//            BeanUtils.populate(content, request.getParameterMap());
+////            content.setId(UUIDUtils.UUIDGetId());
+//            content.setH1(request.getParameter("title"));
+//            content.setImg("images/content/content1.jpg");
+//            content.setP(request.getParameter("content"));
+//            content.setSpan(request.getParameter("author"));
+//            content.setA(request.getParameter("type"));
+//            SimpleDateFormat df = new SimpleDateFormat("yyyy-M-dd");// 设置日期格式
+//            String date = df.format(new Date());
+//            content.setUploadtime(date);
+////            调用service完成添加操作
+//            new FourContentServiceImpl().addContent(content);
+//
+//            response.getWriter().print("success");
+//            System.out.println("success"+content);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            request.setAttribute("msg", "错误");
+//            response.getWriter().print("fail");
+//        }
+
+    }
 }
