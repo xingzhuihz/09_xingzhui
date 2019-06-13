@@ -21,4 +21,5 @@ public interface FourContentService {
     String getTitleJsonContent(String title) throws Exception;
 
     void updateContent(FourContent content) throws Exception;
+    void updateNoImgContent(FourContent content) throws Exception;
 }

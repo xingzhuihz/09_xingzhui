@@ -69,4 +69,9 @@ public class FourContentServiceImpl implements FourContentService {
         FourContentDao dao = new FourContentDaoImpl();
         dao.updateContent(content);
     }
+    @Override
+    public void updateNoImgContent(FourContent content) throws Exception {
+        FourContentDao dao = new FourContentDaoImpl();
+        dao.updateContent(content);
+    }
 }

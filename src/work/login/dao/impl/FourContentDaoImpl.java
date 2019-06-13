@@ -50,7 +50,7 @@ public class FourContentDaoImpl implements FourContentDao {
 
     @Override
     public List<FourContent> titleContent(String title) throws SQLException {
-        String sql="SELECT h1,span,img,p,uploadtime,a FROM index_content WHERE h1 LIKE ?;";
+        String sql="SELECT * FROM index_content WHERE h1 LIKE ?;";
         QueryRunner runner = new QueryRunner(DSutils.getDataSource());
         String titleSql = "%" + title + "%";
         return  runner.query(sql, new BeanListHandler<>(FourContent.class),titleSql);
@@ -61,6 +61,13 @@ public class FourContentDaoImpl implements FourContentDao {
         QueryRunner runner = new QueryRunner(DSutils.getDataSource());
         String sql = "update index_content set h1 = ?,span = ?,p = ?,img = ?,a = ?  where id = ?";
         runner.update(sql, content.getH1(), content.getSpan(), content.getP(),content.getImg(),content.getA(), content.getId());
+    }
+
+    @Override
+    public void updateOldImgContent(FourContent content) throws SQLException {
+        QueryRunner runner = new QueryRunner(DSutils.getDataSource());
+        String sql = "update index_content set h1 = ?,span = ?,p = ?,a = ?  where id = ?";
+        runner.update(sql, content.getH1(), content.getSpan(), content.getP(),content.getA(), content.getId());
     }
 
 

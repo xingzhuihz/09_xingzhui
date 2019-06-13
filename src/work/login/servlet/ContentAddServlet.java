@@ -274,7 +274,7 @@ public class ContentAddServlet extends HttpServlet {
 
             response.getWriter().print("success");
         } catch (Exception e) {
-
+            response.getWriter().print("fail");
         }
 
 //        FourContent content = new FourContent();
