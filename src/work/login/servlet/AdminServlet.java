@@ -157,10 +157,10 @@ public class AdminServlet extends HttpServlet {
                 System.out.println("Android端 登陆成功：" + admin);
                 if (admin.getLimits().equals(1)) {
                     // 成功输出 1 管理员
-                    response.getWriter().print("1");
+                    response.getWriter().print("1"+admin.getImg());
                 } else {
                     // 成功输出 2
-                    response.getWriter().print("2");
+                    response.getWriter().print("2"+admin.getImg());
                 }
 
             }

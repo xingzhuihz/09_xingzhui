@@ -247,6 +247,8 @@ public class ContentUpdateServlet extends HttpServlet {
                     map.put(name, value);
 
 
+
+
                 } else {// 如果是文件
                     String root = getServletContext().getRealPath("/images/content/");
                     System.out.println(item.getName());

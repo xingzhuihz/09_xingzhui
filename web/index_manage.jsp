@@ -80,7 +80,8 @@
 
         %>
         <div id="personInfor">
-            <p id="userName"><%=name %></p>
+            <p id="userName"><%=name %>
+            </p>
             <p><span>管理员</span></p>
             <p>
                 <a href="<%=path %>/index_home.jsp">退出登录 </a>
@@ -1184,7 +1185,8 @@
 
 
                 %>
-                <form method="post" action="<%=path %>/contentadd" id="formAdd" enctype="multipart/form-data">
+                <form method="post" action="<%=path %>/contentadd" id="formAdd" enctype="multipart/form-data"
+                      name="addForm">
                     <input type="hidden" name="code_lingpai" value="<%=code %>">
                     <!--弹出添加用户窗口-->
                     <div class="modal fade" id="addSchool" role="dialog" aria-labelledby="gridSystemModalLabel">
@@ -1248,7 +1250,9 @@
                                                 <label for="sName" class="col-xs-3 control-label">封面：</label>
 
                                                 <input type="file" class="form-control input-sm duiqi" id="sImg"
+                                                       onchange="change('img','sImg');"
                                                        name="cimg" placeholder="">
+                                                <img src="" name="img" id="img" style="width:150px;height:120px;margin-top: 10px;visibility: hidden;" />
 
                                             </div>
                                         </form>
@@ -1267,16 +1271,10 @@
                     <!-- /.modal -->
                 </form>
 
-                <%--<%--%>
 
-                <%--Object content = session.getAttribute("content");--%>
-
-
-                <%--%>--%>
                 <!--弹出修改文章窗口-->
                 <form method="post" action="<%=path %>/contentupdate" enctype="multipart/form-data">
                     <div id="uId"></div>
-
                     <div class="modal fade" id="reviseSchool" role="dialog" aria-labelledby="gridSystemModalLabel">
                         <div class="modal-dialog" role="document" style="width:1000px;height: 700px;">
                             <div class="modal-content" style="height: 700px;">
@@ -2268,7 +2266,7 @@
                     div.innerHTML += "<div class=\"row\"><div class=\"col-xs-1\" name=\"content_id\">" + id + "</div><div class=\"col-xs-2\">" + h1 + "</div><div class=\"col-xs-1\">" + span + "</div><div class=\"col-xs-1\">" + uploadtime + "</div><div class=\"col-xs-2\">" + p + "</div><div class=\"col-xs-2\"></div><div class=\"col-xs-2\"><button  class=\"btn btn-success btn-xs\" data-toggle=\"modal\" data-target=\"#reviseSchool\" style=\"margin-top:10px \" onclick=\"idQuery(" + id + ");\" >修改</button><form method=\"post\" action=\"<%=path %>/contentdel?cid=" + id + " \" id=\"del_btn\" name=\"delcontent\"><button type=\"sumbit\" class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" data-target=\"#deleteSchool\">删除</button></form></div></div>";
                 } else {
                     div.innerHTML += "<div class=\"row\"><div class=\"col-xs-1\" name=\"content_id\">" + id + "</div><div class=\"col-xs-2\">" + h1 + "</div><div class=\"col-xs-1\">" + span + "</div><div class=\"col-xs-1\">" + uploadtime + "</div><div class=\"col-xs-2\">" + p + "</div><div class=\"col-xs-2\"><img  src=\"<%=path%>/" + img + "\" style=\"width:42px!important;height:63px!important;margin-top:3px;\"  /></div><div class=\"col-xs-2\"><button  class=\"btn btn-success btn-xs\" data-toggle=\"modal\" data-target=\"#reviseSchool\" style=\"margin-top:10px \" onclick=\"idQuery(" + id + ");\" >修改</button><form method=\"post\" action=\"<%=path %>/contentdel?cid=" + id + " \" id=\"del_btn\" name=\"delcontent\"><button type=\"sumbit\" class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" data-target=\"#deleteSchool\">删除</button></form></div></div>";
-                      }
+                }
 
 
             }
@@ -2363,16 +2361,13 @@
             contentGroup.innerHTML += "<label for=\"sOrd\" class=\"col-xs-3 control-label\">内容：</label><textarea name=\"uContent\" class=\"form-control input-sm duiqi\" id=\"uContent\"name=\"ccontent\" placeholder=\"\"style=\"height: 100px;width: 500px!important\">" + p + "</textarea>";
 
             if (img == "") {
-                imgGroup.innerHTML += "<label for=\"sOrd\" class=\"col-xs-3 control-label\">封面：</label><input type=\"file\" class=\"form-control input-sm duiqi\" id=\"uImg\" name=\"uImg\" placeholder=\"\">";
+                imgGroup.innerHTML += "<label for=\"sOrd\" class=\"col-xs-3 control-label\">封面：</label><input type=\"file\" class=\"form-control input-sm duiqi\" id=\"uImg\" name=\"uImg\" placeholder=\"\" onchange=\"change('ucimg','uImg')\" ><img src=\"\" name=\"ucimg\" id=\"ucimg\" style=\"width:200px;height:200px;margin-top: 10px;visibility: hidden;\" />";
             } else {
-                imgGroup.innerHTML += "<label for=\"sOrd\" class=\"col-xs-3 control-label\">封面：</label><img src=\"<%=path %>/" + img + "\" class=\"form-control input-sm duiqi\" id=\"qImg\" style=\"width: 200px;height: 200px;float:left;margin-left:1px!important\"><input style=\"float: left;margin-left:80px!important\" type=\"file\" class=\"form-control input-sm duiqi\" id=\"uImg\"name=\"uImg\" placeholder=\"\">";
+                imgGroup.innerHTML += "<label for=\"sOrd\" class=\"col-xs-3 control-label\">封面：</label><img src=\"<%=path %>/" + img + "\" class=\"form-control input-sm duiqi\" id=\"qImg\" style=\"width: 200px;height: 200px;float:left;margin-left:1px!important\"><input style=\"float: left;margin-left:80px!important\" type=\"file\" class=\"form-control input-sm duiqi\" id=\"uImg\"name=\"uImg\" placeholder=\"\" onchange=\"change('ucimg','uImg')\"><img src=\"\" name=\"ucimg\" id=\"ucimg\" style=\"width:200px;height:200px;margin-left: -200px;margin-top:40px;visibility: hidden;float:left;\" />";
             }
-            
-
 
 
             idHid.innerHTML += " <input type=\"hidden\" name=\"uId\" id=\"uId\" value=\"" + id + "\"><input type=\"hidden\" value=\"" + img + "\" name=\"oldimg\">";
-
 
 
             updateSelect(a);
@@ -2517,5 +2512,39 @@
 
 </script>
 
+<%--预览图--%>
+<script>
+    //使用IE条件注释来判断是否IE6，通过判断userAgent不一定准确
+    if (document.all) document.write('<!--[if lte IE 6]><script type="text/javascript">window.ie6= true<\/script><![endif]-->');
+    // var ie6 = /msie 6/i.test(navigator.userAgent);//不推荐，有些系统的ie6 userAgent会是IE7或者IE8
+    function change(picId,fileId) {
+        var pic = document.getElementById(picId);
+        var file = document.getElementById(fileId);
+        if(window.FileReader){//chrome,firefox7+,opera,IE10+
+            oFReader = new FileReader();
+            oFReader.readAsDataURL(file.files[0]);
+            oFReader.onload = function (oFREvent) {pic.src = oFREvent.target.result;pic.style.visibility = "visible";};
+        }
+        else if (document.all) {//IE9-//IE使用滤镜，实际测试IE6设置src为物理路径发布网站通过http协议访问时还是没有办法加载图片
+            file.select();
+            file.blur();//要添加这句，要不会报拒绝访问错误（IE9或者用ie9+默认ie8-都会报错，实际的IE8-不会报错）
+            var reallocalpath = document.selection.createRange().text//IE下获取实际的本地文件路径
+            //if (window.ie6) pic.src = reallocalpath; //IE6浏览器设置img的src为本地路径可以直接显示图片
+            //else { //非IE6版本的IE由于安全问题直接设置img的src无法显示本地图片，但是可以通过滤镜来实现，IE10浏览器不支持滤镜，需要用FileReader来实现，所以注意判断FileReader先
+            pic.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='image',src=\"" + reallocalpath + "\")";
+            pic.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';//设置img的src为base64编码的透明图片，要不会显示红xx
+            pic.style.visibility = "visible";
+            // }
+        }
+        else if (file.files) {//firefox6-
+            if (file.files.item(0)) {
+                url = file.files.item(0).getAsDataURL();
+                pic.src = url;
+                pic.style.visibility = "visible";
+            }
+        }
+    }
+
+</script>
 </body>
 </html>

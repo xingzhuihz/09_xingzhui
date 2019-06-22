@@ -44,8 +44,63 @@ public class ContentAddServlet extends HttpServlet {
                 e.printStackTrace();
             }
 
+        } else if ("addPageANoImg".equals(method)) {
+            addPageANoImg(request, response);
         }
 
+    }
+
+    private void addPageANoImg(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        FourContent content = new FourContent();
+
+
+        // 创建DiskFileItemFactory工厂
+        DiskFileItemFactory factory = new DiskFileItemFactory();
+
+        // 创建一个文件上传解析器
+        ServletFileUpload upload = new ServletFileUpload(factory);
+
+
+        upload.setHeaderEncoding("UTF-8");
+
+        try {
+            List<FileItem> fileItemList = upload.parseRequest(request);
+
+            Map<String, String> map = new HashMap<>();
+
+            for (FileItem item : fileItemList) {
+                // 如果fileitem中封装的是普通输入项的数据
+                if (item.isFormField()) {
+                    String name = item.getFieldName();
+
+                    String value = item.getString("UTF-8");
+
+                    map.put(name, value);
+
+                }
+
+            }
+
+            content.setH1(map.get("title"));
+
+            content.setP(map.get("content"));
+
+            content.setSpan(map.get("aurthor"));
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-M-dd");// 设置日期格式
+            String date = df.format(new Date());
+            content.setUploadtime(date);
+
+
+            content.setA(map.get("type"));
+
+
+            new FourContentServiceImpl().addContent(content);
+
+            response.getWriter().print("success");
+        } catch (Exception e) {
+            response.getWriter().print("fail");
+        }
     }
 
     private void addPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -260,11 +315,10 @@ public class ContentAddServlet extends HttpServlet {
 
             content.setP(map.get("content"));
 
-            content.setSpan(map.get("author"));
+            content.setSpan(map.get("aurthor"));
             SimpleDateFormat df = new SimpleDateFormat("yyyy-M-dd");// 设置日期格式
             String date = df.format(new Date());
             content.setUploadtime(date);
-//            content.setUploadtime(map.get("cuploadtime"));
 
 
             content.setA(map.get("type"));

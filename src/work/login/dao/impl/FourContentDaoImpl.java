@@ -21,7 +21,7 @@ public class FourContentDaoImpl implements FourContentDao {
 
     @Override
     public List<FourContent> allContent() throws SQLException {
-        String sql="SELECT id,h1,span,img,p,uploadtime,a FROM index_content;";
+        String sql="SELECT id,h1,span,img,p,uploadtime,a FROM index_content ORDER BY uploadtime DESC;";
         QueryRunner runner = new QueryRunner(DSutils.getDataSource());
         return  runner.query(sql, new BeanListHandler<>(FourContent.class));
     }

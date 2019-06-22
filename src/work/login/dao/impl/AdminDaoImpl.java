@@ -21,6 +21,8 @@ public class AdminDaoImpl implements AdminDao {
         QueryRunner runner = new QueryRunner(DSutils.getDataSource());
         String sql = "select * from admin where name=? and password=? limit 1";
         admin = runner.query(sql, new BeanHandler<>(Admin.class), admin.getName(), admin.getPassword());
+        return admin;
+
 
 
 //        // 获取连接
@@ -58,7 +60,6 @@ public class AdminDaoImpl implements AdminDao {
 //                throw new RuntimeException(e);
 //            }
 //        }
-        return admin;
     }
 
     @Test

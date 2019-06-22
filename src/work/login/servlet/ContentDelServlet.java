@@ -48,7 +48,7 @@ public class ContentDelServlet extends HttpServlet {
             //调用service完成添加操作
             new FourContentServiceImpl().delContent(content);
 
-            response.getWriter().print("sucess");
+            response.getWriter().print("success");
 
 
 
